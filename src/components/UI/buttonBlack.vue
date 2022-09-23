@@ -1,0 +1,31 @@
+<template>
+    <button type="button" class="btn-black">
+        <slot></slot>
+    </button>
+</template>
+
+<script>
+    export default {
+        name: "BtnBlack",
+        props: {},
+        data() {
+            return {}
+        },
+        computed: {}
+    }
+</script>
+
+<style scoped>
+.btn-black {
+    padding: 1.5em 4em;
+    background: #191919;
+    border: 1px solid #191919;
+    border-radius: 0px;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+</style>
