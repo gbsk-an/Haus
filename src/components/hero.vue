@@ -34,21 +34,23 @@ import ButtonTransparent from './UI/buttonTransparent.vue';
         background-color: #996B60;
     }
     .hero-text {
-        margin: 18em 0 6em;
+        margin: 15em 0 6em;
     }
     .hero-title {
         margin: 0 0 1.2em;
-        color: #FFFFFF;
+        color: #f7f7f7;
         font-size: 73px;
+        font-weight: 700;
         line-height: 96px;
     }
     .hero-description {
         margin: 0 0 1em;
-        color: #FFFFFF;
+        color: #f7f7f7;
         font-size: 18px;
+        font-weight: 100;
         line-height: 32px;
     }
     .hero-background {
-        z-index: -100;
+        height: 100%;
     }
 </style>

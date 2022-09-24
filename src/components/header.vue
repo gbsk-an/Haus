@@ -32,16 +32,20 @@
 <style scoped>
     header {
         padding: 2em 2em 1em;
-        background-color: #996B60;
+        background-color: #996b607c;
+        z-index: 100;
     }
     .navigation {
+        position: fixed;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
     .navigation-item {
         margin-right: 3em;
-        color: #fff;
+        color: #f7f7f7;
         font-size: 12px;
+        font-weight: 400;
         line-height: 18px;
         letter-spacing: 1px;
         text-decoration: none;

@@ -1,21 +1,21 @@
 <template>
     <div class="product">
         <div class="product-brand">
-          <h4>{{product.brand}}</h4>
+          <h3 class="product-brand_title">{{product.brand}}</h3>
         </div>
         <div class="product-name">
-            <p>{{product.name}}</p>
+            <p class="product-name_title">{{product.name}}</p>
         </div>
         <div class="product-attribute">
-            <p>{{product.attribute}}</p>
+            <p class="product-attribute_title">{{product.attribute}}</p>
         </div>
         <div class="product-price">
-            <p>${{product.price}}</p>
+            <p class="product-price_value">${{product.price}}</p>
         </div>
         <div class="product-image">
-          <img src="image">
+          <img v-if="product.image" :src="product.image" />
         </div> 
-        <BtnBlack>shop now</BtnBlack>
+        <BtnBlack>Shop now</BtnBlack>
     </div>
 </template>
 
@@ -30,16 +30,18 @@ import BtnBlack from './buttonBlack.vue';
         props: {
             product: {
                 type: Object, 
-                required: true
+                required: true,
             }
         },
         data() {
-            return {              
-                image: `{{product.image}}`,
+            return {    
+                
             }            
         },
-        computed: {}
+        computed: { 
+ 
     }
+}
 </script>
 
 <style scoped>
@@ -56,9 +58,27 @@ import BtnBlack from './buttonBlack.vue';
         margin: 0;
     }
     .product-image {
-        margin: 1em 0;
-        width: 150px;
-        height: 200px;
+        margin: 1em 0;;
         background-color: brown;
+    }
+    .product-brand_title {
+        margin-bottom: .8em;
+        color: #141414;
+        font-size: 24px;
+        font-weight: 700;
+    }
+    .product-name_title {
+        margin-bottom: 2em;
+        font-size: 17px;
+        font-weight: 400;    
+    }
+    .product-attribute_title {
+        margin-bottom: .8em;
+        font-size: 17px;  
+        font-weight: 400; 
+    }
+    .product-price_value {
+        font-size: 19px;
+        font-weight: 700;
     }
 </style>

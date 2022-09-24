@@ -22,6 +22,7 @@
     border: 1px solid #191919;
     border-radius: 0px;
     font-size: 12px;
+    font-weight: 400;
     line-height: 14px;
     text-align: center;
     letter-spacing: 1px;
