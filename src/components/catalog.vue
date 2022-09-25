@@ -2,24 +2,11 @@
     <div class="wrapper">
         <div class="catalog-head">
             <div class="sort">
-                <label class="form-control-label" for="sort-order-select">Sort by</label>
-                <select name="sort-order" v-model="sortType" id="sort-order-select" class="custom-select" style="visibility: visible;">   
-                    <option class="popular" data-id="popular">
-                        Most Popular
-                    </option>
-                    <option class="rating" data-id="rating">
-                        Reviewer Rating
-                    </option>
-                    <option class="price-low-to-high" data-id="price-low-to-high">
-                        Price Low To High
-                    </option>
-                    <option class="price-high-to-low" data-id="price-high-to-low">
-                        Price High to Low
-                    </option>     
-                    <option class="product-name-descending select" data-id="product-name-descending">
-                        Vintage
-                    </option>
-                </select>
+                <v-select 
+                :options="options"
+                @select="optionSelect"
+                :selected="selected"
+                />
             </div>
             <div class="">
                 <p>Showing Products</p>
@@ -35,10 +22,14 @@
 
 <script>
 import productItem from '@/components/UI/productItem.vue'
+import vSelect from '@/components/UI/v-select.vue'
+
     export default {
         name: "Catalog",
         components: {
-            productItem,            
+            productItem,  
+            vSelect,
+                  
         },
         props: {
             products: {
@@ -48,19 +39,24 @@ import productItem from '@/components/UI/productItem.vue'
         },
         data() {
             return {
-                sortType: 'byName'
+                options: [
+                    {name: 'Popular', value: 'popular'},
+                    {name: 'Rating', value: 'rating'},
+                    {name: 'Price-low-to-high', value: 'price-low-to-high'},
+                    {name: 'Price-high-to-low', value: 'price-high-to-low'},
+                    {name: 'Vintage', value: 'vintage'}                    
+                ],
+                selected: 'Select'
             }
         },
         computed: {
-    sortedItems() {
-      switch(this.sortType) {
-        case 'byName': return  // sort by name
-        case 'bySomething': return  // sort by something
-      } 
-    }
-  },
-
-        methods: {},
+           
+        },
+        methods: {
+            optionSelect(option) {
+                this.selected = option.name
+            }
+        },
     }
 </script>
 
@@ -74,10 +70,15 @@ import productItem from '@/components/UI/productItem.vue'
         display: flex;
         justify-content: space-between;
     }
-.catalog {    
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 3em;
-}
+    .catalog {    
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 3em;
+    }
+    .sort {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
 </style>

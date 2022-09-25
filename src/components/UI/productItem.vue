@@ -59,7 +59,8 @@ import BtnBlack from './buttonBlack.vue';
     }
     .product-image {
         margin: 1em 0;;
-        background-color: brown;
+        height: 100%;
+        background-color: transparent;
     }
     .product-brand_title {
         margin-bottom: .8em;
