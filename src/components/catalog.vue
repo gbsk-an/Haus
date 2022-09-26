@@ -67,10 +67,11 @@ export default {
             this.sortedProducts = [];
             let vm = this;
             this.PRODUCTS.map(function(item) {
-                if (item.vintage === option.name) {
+                if (option.name === item.vintage) {
                     vm.sortedProducts.push(item);
-                }
-            }),
+                }   
+                          
+            }),            
             this.selected = option.name
         }
     },

@@ -5,6 +5,7 @@
         <Feedbacks />
         <Catalog  />
         <IntroToAperol />
+        <FollowUs />
       </main>
     <Footer /> 
 </template>
@@ -15,6 +16,7 @@ import Header from '@/components/header.vue';
 import Feedbacks from '@/components/feedbacks.vue'
 import Catalog from '@/components/catalog.vue';
 import IntroToAperol from '@/components/introToAperol.vue'
+import FollowUs from '@/components/followUs.vue'
 import Footer from './components/footer.vue';
 
   export default {
@@ -24,6 +26,7 @@ import Footer from './components/footer.vue';
       Feedbacks,
       Catalog,
       IntroToAperol,
+      FollowUs,
       Footer
     },
     data() {
