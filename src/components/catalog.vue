@@ -5,19 +5,18 @@
                 <h-select 
                 :options="options"
                 :selected="selected"
-                @select="optionSelect"                
+                @select="sortByOptions"                
                 />
             </div>
             <div class="">
-                <p>Showing Products</p>
+                <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
             </div>
         </div>    
         <div class="catalog">
             <productItem 
-                v-for="product in PRODUCTS"
+                v-for="product in filteredProducts"
                 :key="product.name"
                 :product="product" 
-                @sendDataToParent="showChildArticleInConsole"
             />
         </div>
     </div>
@@ -44,23 +43,35 @@ export default {
                 {name: 'Price-high-to-low', value: 'price-high-to-low'},
                 {name: 'Vintage', value: 'vintage'}                    
             ],
-            selected: 'Select'
+            selected: 'Popular',
+            sortedProducts: []
         }
     },
     computed: {
         ...mapGetters([
             'PRODUCTS'
-        ])
+        ]),
+        filteredProducts() {
+            if (this.sortedProducts.length) {
+                return this.sortedProducts
+            } else {
+                return this.PRODUCTS
+            }
+        }
     },
     methods: {
         ...mapActions([
             'GET_PRODUCTS_FROM_API'
         ]),
-        optionSelect(option) {
-            this.selected = option.name;
-        },
-        showChildArticleInConsole(data) {
-            console.log(data)
+        sortByOptions(option) {
+            this.sortedProducts = [];
+            let vm = this;
+            this.PRODUCTS.map(function(item) {
+                if (item.vintage === option.name) {
+                    vm.sortedProducts.push(item);
+                }
+            }),
+            this.selected = option.name
         }
     },
     mounted() {
@@ -89,5 +100,9 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 1em;
+    }
+    .products-quantity {
+        font-size: 20px;
+        font-weight: bold;
     }
 </style>

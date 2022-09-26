@@ -98,7 +98,7 @@
             "popular": 3,
             "rating": 89,
             "type": "Red",
-            "vintage": "Yes"
+            "vintage": "Vintage"
         },
         {
             "brand": "Beringer", 
@@ -110,6 +110,17 @@
             "rating": 72,
             "type": "Red",
             "vintage": "No"
+        },
+        {
+            "brand": "Hewitt Vineyard", 
+            "name": "2011 Hewitt Rutherford Cabernet Sauvignon Magnum", 
+            "attribute": "Rutherford",
+            "price": 450,
+            "image": "Sterling-Reserve-Calistoga-CabSauv_750.png",
+            "popular": 6,
+            "rating": 99,
+            "type": "Red",
+            "vintage": "Vintage"
         }
     ]
 }
