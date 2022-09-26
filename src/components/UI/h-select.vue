@@ -23,7 +23,7 @@
 
 <script>
     export default {
-        name: "v-select",
+        name: "h-select",
         props: {
             options: {
                 type: Array,

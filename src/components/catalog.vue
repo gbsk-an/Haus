@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="catalog-head">
             <div class="sort">
-                <v-select 
+                <h-select 
                 :options="options"
                 :selected="selected"
                 @select="optionSelect"                
@@ -26,19 +26,17 @@
 <script>
 import { mapActions, mapGetters } from 'vuex'
 import productItem from '@/components/productItem.vue'
-import vSelect from '@/components/UI/v-select.vue'
+import hSelect from '@/components/UI/h-select.vue'
 
 export default {
     name: "Catalog",
     components: {
         productItem,  
-        vSelect,
-         
+        hSelect,         
     },
     props: {},
     data() {
-        return {
-            
+        return {            
             options: [
                 {name: 'Popular', value: 'popular'},
                 {name: 'Rating', value: 'rating'},
@@ -46,6 +44,7 @@ export default {
                 {name: 'Price-high-to-low', value: 'price-high-to-low'},
                 {name: 'Vintage', value: 'vintage'}                    
             ],
+            selected: 'Select'
         }
     },
     computed: {
