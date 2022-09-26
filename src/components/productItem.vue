@@ -15,7 +15,7 @@
         <div class="product-image">
           <img :src="require('../assets/' +  product.image)" alt="product image" />
         </div> 
-        <BtnBlack>Shop now</BtnBlack>
+        <BtnBlack @click="sendDataToParent">Add to cart</BtnBlack>
     </div>
 </template>
 
@@ -42,6 +42,11 @@ import BtnBlack from './UI/buttonBlack.vue';
             }            
         },
         computed: {},
+        methods: {
+            sendDataToParent() {
+                this.$emit('sendDataToParent', this.product.name)
+            }
+        },
 }
 </script>
 

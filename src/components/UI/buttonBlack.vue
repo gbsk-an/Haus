@@ -28,5 +28,6 @@
     letter-spacing: 1px;
     text-transform: uppercase;
     color: #FFFFFF;
+    cursor: pointer;
 }
 </style>

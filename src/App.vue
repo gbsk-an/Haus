@@ -1,13 +1,12 @@
 <template>
     <Header />
-    <main>
-      <Hero />
-      <Feedbacks />
-      <Catalog  
-      :products="products"
-      />
-      <IntroToAperol />
-    </main>
+      <main>
+        <Hero />
+        <Feedbacks />
+        <Catalog  />
+        <IntroToAperol />
+      </main>
+    <Footer /> 
 </template>
 
 <script>
@@ -16,7 +15,8 @@ import Header from '@/components/header.vue';
 import Feedbacks from '@/components/feedbacks.vue'
 import Catalog from '@/components/catalog.vue';
 import IntroToAperol from '@/components/introToAperol.vue'
-import products from './components/data/data'
+import Footer from './components/footer.vue';
+
   export default {
     components: {
       Hero,
@@ -24,11 +24,11 @@ import products from './components/data/data'
       Feedbacks,
       Catalog,
       IntroToAperol,
-      products,
+      Footer
     },
     data() {
       return {
-        products
+
       }
     },
     methods: {}
@@ -37,22 +37,22 @@ import products from './components/data/data'
 </script>
 
 <style>
-body {
-  margin: 0;
-  background-color: #fff;
-  font-family: 'Playfair Display', serif;
-}
-html {
-  box-sizing: border-box;
-}
+  body {
+    margin: 0;
+    background-color: #fff;
+    font-family: 'Playfair Display', serif;
+  }
+  html {
+    box-sizing: border-box;
+  }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
 
-p {
-  color: #141414;
-}
+  p {
+    color: #141414;
+  }
 </style>
