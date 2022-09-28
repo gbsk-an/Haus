@@ -18,7 +18,10 @@
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0"
+    "@vue/cli-service": "~5.0.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^13.0.2",
+    "style-resources-loader": "^1.5.0"
   },
   "browserslist": [
     "> 1%",
