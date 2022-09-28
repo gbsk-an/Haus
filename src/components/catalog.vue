@@ -1,23 +1,29 @@
 <template>
     <div class="wrapper">
-        <div class="catalog-head">
-            <div class="sort">
+        <router-link :to="{name: 'cart', params: {cart_data: CART}}">
+            <p class="navigation-item">cart ({{CART.length}})</p>
+        </router-link>
+        <div class="products">
+            <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
+        </div>
+        <div class="container">
+            <div class="container-sort">
                 <h-select 
                 :options="options"
                 :selected="selected"
                 @select="sortByOptions"                
                 />
+                <BtnClearFilters>Clear Filters</BtnClearFilters>
+
+            </div>    
+            <div class="container-catalog">
+                <productItem 
+                    v-for="product in filteredProducts"
+                    :key="product.name"
+                    :product="product" 
+                    @addToCart="addToCart"
+                />
             </div>
-            <div class="">
-                <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
-            </div>
-        </div>    
-        <div class="catalog">
-            <productItem 
-                v-for="product in filteredProducts"
-                :key="product.name"
-                :product="product" 
-            />
         </div>
     </div>
 </template>
@@ -26,12 +32,14 @@
 import { mapActions, mapGetters } from 'vuex'
 import productItem from '@/components/productItem.vue'
 import hSelect from '@/components/UI/h-select.vue'
+import BtnClearFilters from '@/components/UI/buttonClearFilters.vue'
 
 export default {
     name: "Catalog",
     components: {
         productItem,  
-        hSelect,         
+        hSelect,  
+        BtnClearFilters,      
     },
     props: {},
     data() {
@@ -49,7 +57,8 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'PRODUCTS'
+            'PRODUCTS',
+            'CART'
         ]),
         filteredProducts() {
             if (this.sortedProducts.length) {
@@ -61,15 +70,32 @@ export default {
     },
     methods: {
         ...mapActions([
-            'GET_PRODUCTS_FROM_API'
+            'GET_PRODUCTS_FROM_API',
+            'ADD_TO_CART'
         ]),
+        addToCart(data) {
+            this.ADD_TO_CART(data)
+        },
         sortByOptions(option) {
             this.sortedProducts = [];
             let vm = this;
             this.PRODUCTS.map(function(item) {
                 if (option.name === item.vintage) {
                     vm.sortedProducts.push(item);
-                }   
+                }else if (option.name == 'popular') {
+                    function sorting(a,b) {
+                        let fa = a.name.toLowerCase(), fb = b.name.toLowerCase();
+                        if (fa < fb) {
+                            return -1
+                        }
+                        if (fa > fb) {
+                            return 1
+                        }
+                        return 0
+                    }
+                    vm.sortedProducts.push(sorting(item))
+                    console.log(sorting(item))
+                }                
                           
             }),            
             this.selected = option.name
@@ -87,20 +113,24 @@ export default {
         padding: 5em 0;
         max-width: 1200px;
     }
-    .catalog-head {
+    .container {
         display: flex;
-        justify-content: space-between;
+        gap: 1em;
     }
-    .catalog {    
+    .container-catalog {    
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        gap: 3em;
+        gap: 2em;
     }
-    .sort {
+    .container-sort {
+        width: 200px;
         display: flex;
         flex-direction: column;
         gap: 1em;
+    }
+    .products {
+        text-align: right;
     }
     .products-quantity {
         font-size: 20px;

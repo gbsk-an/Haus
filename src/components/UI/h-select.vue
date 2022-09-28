@@ -1,6 +1,6 @@
 <template>
     <div class="v-select" >
-        <p>Sort by:</p>
+        <p class="v-select_title">Sort by:</p>
         <p 
             @click="areOptionsVisible = !areOptionsVisible"
         >
@@ -62,19 +62,20 @@
 <style scoped>
     .v-select {
         position: relative;
-        width: 200px;
-        margin-bottom: 1em;
+        padding: 1em 0 0 .6em;
         cursor: pointer;
-        
+        border: 1px solid #0f0f0f93;
+        width: 200px;
     }
     .options {    
-        position: absolute;    
+        position: absolute;  
+        left: 0;  
         padding: .7em;
         width: 100%;
         border: 1px solid #141414;      
         background-color: #ffffff;
     }
-    .options > p:hover {
-        color: #0f0f0f;
+    .v-select_title {
+        margin: 0 0 1em;
     }
 </style>

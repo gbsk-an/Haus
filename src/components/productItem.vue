@@ -1,7 +1,7 @@
 <template>
     <div class="product">
         <div class="product-brand">
-          <h3 class="product-brand_title">{{product.brand}}</h3>
+          <h5 class="product-brand_title">{{product.brand}}</h5>
         </div>
         <div class="product-name">
             <p class="product-name_title">{{product.name}}</p>
@@ -15,7 +15,7 @@
         <div class="product-image">
           <img :src="require('../assets/' +  product.image)" alt="product image" />
         </div> 
-        <BtnBlack @click="sendDataToParent">Add to cart</BtnBlack>
+        <BtnBlack @click="addToCart">Add to cart</BtnBlack>
     </div>
 </template>
 
@@ -43,8 +43,8 @@ import BtnBlack from './UI/buttonBlack.vue';
         },
         computed: {},
         methods: {
-            sendDataToParent() {
-                this.$emit('sendDataToParent', this.product.name)
+            addToCart() {
+                this.$emit('addToCart', this.product);
             }
         },
 }
@@ -59,6 +59,7 @@ import BtnBlack from './UI/buttonBlack.vue';
         width: 300px;
         background-color: rgb(235, 235, 235);
         border-radius: 10px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     p {
         margin: 0;

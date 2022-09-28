@@ -21,6 +21,7 @@
         background-color: transparent;
         border: 1px solid #FFFFFF;
         color: #141414;
+        font-family: 'Playfair Display', serif;
         font-size: 12px;
         font-weight: 700;
         line-height: 14px;

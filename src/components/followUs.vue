@@ -61,7 +61,7 @@ import BtnWhite from '@/components/UI/buttonWhite.vue'
         margin: 0;
         color: #f7f7f7;
         font-weight: 400;
-        font-size: 55px;
+        font-size: 53px;
         line-height: 80px;
     }
     .follow-content_mood > p {

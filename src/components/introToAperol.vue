@@ -28,6 +28,7 @@
 <style scoped>
     .intro {
         margin: 0 auto;
+        padding: 2em;
         max-width: 1320px;
         display: flex;
         flex-direction: column;

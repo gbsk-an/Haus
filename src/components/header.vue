@@ -8,15 +8,18 @@
         <div class="logo">
             <img src="../assets/logo.svg" class="navigation-item">
         </div>
-        <div class="">
+        <div class="navigation-flex">
             <a href="" class="navigation-item">newsletter</a>
             <a href="" class="navigation-item">account</a>
-            <a href="" class="navigation-item">cart ()</a>
+            <router-link :to="{name: 'cart', params: {cart_data: CART}}">
+                <div class="navigation-item">cart ({{CART.length}})</div>
+            </router-link>            
         </div>
     </header>
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex';
     export default {
         name: "Header",
         props: {},
@@ -25,7 +28,16 @@
                 
             }
         },
-        computed: {}
+        computed: {
+            ...mapGetters([
+                'CART'
+            ]),
+        },
+        methods: {
+            ...mapActions ([
+                'ADD_TO_CART'
+            ])
+        }
     }
 </script>
 
@@ -41,9 +53,12 @@
         display: flex;
         justify-content: space-between;
     }
-    .navigation-item {
+    .navigation-item:not(:last-child) {
         margin-right: 3em;
+    }
+    .navigation-item {
         color: #f7f7f7;
+        border: none;
         font-size: 12px;
         font-weight: 400;
         line-height: 18px;
@@ -54,5 +69,8 @@
     .logo {
         width: 2em;
         height: 2em;
+    }
+    .navigation-flex {
+        display: flex;
     }
 </style>

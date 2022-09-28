@@ -1,33 +1,19 @@
 <template>
-    <Header />
-      <main>
-        <Hero />
-        <Feedbacks />
-        <Catalog  />
-        <IntroToAperol />
-        <FollowUs />
-      </main>
-    <Footer /> 
+  <Header />
+  <Main />
+  <Footer /> 
 </template>
 
 <script>
-import Hero from '@/components/hero.vue'; 
 import Header from '@/components/header.vue';
-import Feedbacks from '@/components/feedbacks.vue'
-import Catalog from '@/components/catalog.vue';
-import IntroToAperol from '@/components/introToAperol.vue'
-import FollowUs from '@/components/followUs.vue'
+import Main from '@/components/main.vue'
 import Footer from './components/footer.vue';
 
   export default {
     components: {
-      Hero,
-      Header,
-      Feedbacks,
-      Catalog,
-      IntroToAperol,
-      FollowUs,
-      Footer
+    Header,
+    Main,
+    Footer,
     },
     data() {
       return {
@@ -35,7 +21,6 @@ import Footer from './components/footer.vue';
       }
     },
     methods: {}
-
   }
 </script>
 
@@ -53,9 +38,5 @@ import Footer from './components/footer.vue';
   *::before,
   *::after {
     box-sizing: inherit;
-  }
-
-  p {
-    color: #141414;
   }
 </style>

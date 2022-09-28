@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-container_item footer-newsletter">
-                <h2 class="footer-newsletter_title">Stay posted</h2>
+                <h3 class="footer-newsletter_title">Stay posted</h3>
                 <p>Let's be friends. Subscribe to our newsletter to receive updates on new launches, recipes, playlists, and more.</p>
                 <div class="footer-newsletter_form">
                     <input type="mail" class="input-mail" placeholder="your mail">
