@@ -11,7 +11,7 @@ This project implements basic shopping cart and catalog features:
 * Filter/sort items in catalog
 
 ## Preview
-![scrn_01](https://user-images.githubusercontent.com/95074782/193011693-7faa9079-35d5-4537-9e3e-21b1c8a20ab4.png)
+![screenrecode_01](https://user-images.githubusercontent.com/95074782/193033509-6f4ef82a-c7a2-437b-86ec-0575278434ef.gif)
 
 
 ### Get Started
