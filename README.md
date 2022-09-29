@@ -1,4 +1,4 @@
-# vue-todo
+# Haus (wine shop)
 
 ## Project setup
 ```
