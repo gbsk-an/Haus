@@ -59,23 +59,23 @@
     }
 </script>
 
-<style scoped>
-    .v-select {
-        position: relative;
-        padding: 1em 0 0 .6em;
-        cursor: pointer;
-        border: 1px solid #0f0f0f93;
-        width: 200px;
-    }
-    .options {    
-        position: absolute;  
-        left: 0;  
-        padding: .7em;
-        width: 100%;
-        border: 1px solid #141414;      
-        background-color: #ffffff;
-    }
-    .v-select_title {
+<style lang="scss" scoped>
+.v-select {
+    position: relative;
+    padding: 1em 0 0 .6em;
+    cursor: pointer;
+    border: 1px solid #0f0f0f93;
+    width: 200px;
+    &_title {
         margin: 0 0 1em;
     }
+}
+.options {    
+    position: absolute;  
+    left: 0;  
+    padding: .7em;
+    width: 100%;
+    border: 1px solid #141414;      
+    background-color: #ffffff;
+}
 </style>

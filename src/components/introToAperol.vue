@@ -4,7 +4,7 @@
             <img src="../assets/background_2.png">
         </div>
         <div class="intro-item intro-text">
-            <div class="">
+            <div>
                 <h2 class="intro-text_title">An intro to apéritifs</h2>
             </div>
             <div class="intro-text_description">
@@ -25,29 +25,38 @@
     }
 </script>
 
-<style scoped>
-    .intro {
-        margin: 0 auto;
-        padding: 2em;
-        max-width: 1320px;
-        display: flex;
-        flex-direction: column;
-    }
-    .intro-text {
+<style lang="scss" scoped>
+.intro {
+    margin: 0 auto;
+    padding: 2em 0;
+    max-width: 1320px;
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+        padding: 2em 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10em;
+        gap: 8em;
+
+        &_title {
+            margin: 0;
+            color: #141414;
+            font-weight: 400;
+            font-size: 53px;
+            line-height: 80px;
+        }
+
+        &_description {
+            text-align: justify;
+            font-size: 18px;
+            line-height: 32px;
+            &>p {
+                margin: 0;
+                color: #141414;
+            }
+        }
     }
-    .intro-text_title {
-        color: #141414;
-        font-weight: 400;
-        font-size: 53px;
-        line-height: 80px;
-    }
-    .intro-text_description {
-        text-align: justify;
-        font-size: 18px;
-        line-height: 32px;
-    }
+}
 </style>

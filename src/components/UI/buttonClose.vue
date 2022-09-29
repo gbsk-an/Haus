@@ -13,17 +13,16 @@
     }
 </script>
 
-<style scoped>
-    .button-close {
-        position: relative;
-        height: 36px;
-        width: 36px;
-        background-color: transparent;
-        border: 1px solid #141414;
-        border-radius: 0px;
-        cursor: pointer;
-    }
-    .button-close:after {
+<style lang="scss" scoped>
+.button-close {
+    position: relative;
+    height: 36px;
+    width: 36px;
+    background-color: transparent;
+    border: 1px solid #141414;
+    border-radius: 0px;
+    cursor: pointer;
+    &:after {
         content: "";
         position: absolute;
         width: 14px;
@@ -33,5 +32,6 @@
         background-position: center;
         transform: translate(-50%,-50%);
         cursor: pointer;
-      }
+    }
+}
 </style>

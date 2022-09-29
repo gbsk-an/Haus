@@ -1,8 +1,5 @@
 <template>
     <div class="wrapper">
-        <router-link :to="{name: 'cart', params: {cart_data: CART}}">
-            <p class="navigation-item">cart ({{CART.length}})</p>
-        </router-link>
         <div class="products">
             <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
         </div>
@@ -46,10 +43,10 @@ export default {
         return {            
             options: [
                 {name: 'Popular', value: 'popular'},
+                {name: 'Vintage', value: 'vintage'},    
                 {name: 'Rating', value: 'rating'},
                 {name: 'Price-low-to-high', value: 'price-low-to-high'},
-                {name: 'Price-high-to-low', value: 'price-high-to-low'},
-                {name: 'Vintage', value: 'vintage'}                    
+                {name: 'Price-high-to-low', value: 'price-high-to-low'},                                
             ],
             selected: 'Popular',
             sortedProducts: []
@@ -107,33 +104,36 @@ export default {
 }
 </script>
 
-<style scoped>
-    .wrapper {
-        margin: 0 auto;
-        padding: 5em 0;
-        max-width: 1200px;
-    }
-    .container {
-        display: flex;
-        gap: 1em;
-    }
-    .container-catalog {    
+<style lang="scss" scoped>
+.wrapper {
+    margin: 0 auto;
+    padding: 2em 0;
+    max-width: 1710px;
+}
+.container {
+    display: flex;
+    gap: 1em;
+
+    &-catalog {    
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 2em;
     }
-    .container-sort {
+    
+    &-sort {
         width: 200px;
         display: flex;
         flex-direction: column;
         gap: 1em;
     }
-    .products {
-        text-align: right;
-    }
-    .products-quantity {
+}
+.products {
+    text-align: right;
+
+    &-quantity {
         font-size: 20px;
         font-weight: bold;
     }
+}
 </style>
