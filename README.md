@@ -1,19 +1,28 @@
 # Haus (wine shop)
 
-## Project setup
-```
+## Technical details
+
+<img src="https://badgen.net/badge/Vue/3.2.13/blue" /> <img src="https://badgen.net/badge/Vue-router/4.1.5/blue" /> <img src="https://badgen.net/badge/Vuex/4.0.2/blue"> <img src="https://badgen.net/badge/Axios/0.27.2/green"> <img src="https://badgen.net/badge/json-server/0.17.0/green"> <img src="https://badgen.net/badge/SASS/1.55.0/green">
+
+## Features
+This project implements basic shopping cart and catalog features:
+* Pull products list from API
+* Add/Remove item to shopping cart
+* Filter/sort items in catalog
+
+## Preview
+![scrn_01](https://user-images.githubusercontent.com/95074782/193011693-7faa9079-35d5-4537-9e3e-21b1c8a20ab4.png)
+
+
+### Get Started
+``` bash
+# install dependencies
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+# start json server
+json-server --watch db.json
+
+# serve with hot reload at localhost:8080
 npm run serve
-```
 
-### Compiles and minifies for production
 ```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
