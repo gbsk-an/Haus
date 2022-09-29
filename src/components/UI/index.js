@@ -1,10 +1,9 @@
-import BtnTransparent from '@/components/UI/buttonTransparent';
-import BtnBlack from '@/components/UI/buttonBlack';
-import BtnWhite from '@/components/UI/buttonWhite';
-import BtnClearFilters from '@/components/UI/buttonClearFilters';
-import ButtonClose from '@/components/UI/buttonClose';
-import InputCheckout from '@/components/UI/inputCheckout';
-import ButtonGrey from '@/components/UI/buttonGrey';
+import BtnTransparent from '@/components/UI/button-transparent';
+import BtnBlack from '@/components/UI/button-black';
+import BtnWhite from '@/components/UI/button-white';
+import BtnClearFilters from '@/components/UI/button-clear-filters';;
+import InputCheckout from '@/components/UI/input-checkout';
+import ButtonGrey from '@/components/UI/button-grey';
 
 export default [
     BtnTransparent, 
@@ -12,6 +11,5 @@ export default [
     BtnWhite,
     ButtonGrey,
     BtnClearFilters,
-    ButtonClose,
     InputCheckout
 ]

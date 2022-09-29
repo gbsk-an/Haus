@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        name: "IntroToAperol",
+        name: "intro-to-aperol",
         props: {},
         data() {
             return {}

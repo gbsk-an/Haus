@@ -1,7 +1,11 @@
 <template>
     <div class="hero">
         <div class="hero-background">
-            <img src="../assets/background.png" class="hero-background_image" />
+            <img 
+                src="../assets/background.png" 
+                class="hero-background_image" 
+                alt="background"
+            />
         </div>
         <div class="hero-text">
             <h1 class="hero-text_title">Alcohol for the<br />modern drinker</h1>
@@ -12,10 +16,9 @@
 </template>
 
 <script>
-import ButtonTransparent from './UI/buttonTransparent.vue';
-
+import ButtonTransparent from '@/components/UI/button-transparent.vue';
     export default {        
-        name: "Hero",
+        name: "hero",
         components: {
             ButtonTransparent
         },

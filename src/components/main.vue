@@ -1,34 +1,26 @@
 <template>
     <main>
-        <Hero />
-        <Feedbacks />
-        <router-view></router-view>
-        <!-- <Catalog  />
-        <Cart 
-            v-if="CART.length" 
-            :cart_data="CART"
-        /> -->
-        <IntroToAperol />
-        <FollowUs />
+        <hero />
+        <feedbacks />
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+        <intro-to-aperol />
+        <follow-us />
     </main>
 </template>
 
 <script>
 import Hero from '@/components/hero.vue'; 
 import Feedbacks from '@/components/feedbacks.vue'
-// import Catalog from '@/components/catalog.vue';
-// import Cart from '@/components/cart.vue'
-import IntroToAperol from '@/components/introToAperol.vue'
-import FollowUs from '@/components/followUs.vue'
-import { mapGetters } from 'vuex';
+import IntroToAperol from '@/components/intro-to-aperol.vue'
+import FollowUs from '@/components/follow-us.vue'
 
     export default {
-        name: "Main",
+        name: "main",
         components: {
             Hero,            
             Feedbacks,
-            // Catalog,
-            // Cart,
             IntroToAperol,
             FollowUs,            
         },
@@ -36,11 +28,7 @@ import { mapGetters } from 'vuex';
         data() {
             return {}
         },
-        computed: {
-            ...mapGetters([
-                'CART'
-            ])
-        },
+        computed: {},
     }
 </script>
 

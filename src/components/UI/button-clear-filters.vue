@@ -1,12 +1,12 @@
 <template>
-    <button type="button" class="btn-black">
+    <button class="btn-clear-filters">
         <slot></slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "BtnBlack",
+        name: "btn-clear-filters",
         props: {},
         data() {
             return {}
@@ -16,18 +16,19 @@
 </script>
 
 <style scoped>
-.btn-black {
-    padding: 1.5em 4em;
-    background: #191919;
-    border: 1px solid #191919;
+.btn-clear-filters {
+    padding: 1.5em 2em;
+    background: #f7f7f7;
+    border: 1px solid #141414;
     border-radius: 0px;
-    font-size: 12px;
-    font-weight: 400;
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
     line-height: 14px;
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #FFFFFF;
+    color: #141414;
     cursor: pointer;
 }
 </style>

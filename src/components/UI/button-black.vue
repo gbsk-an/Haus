@@ -1,12 +1,12 @@
 <template>
-    <button type="button" class="btn-white">
+    <button type="button" class="btn-black">
         <slot></slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "BtnWhite",
+        name: "btn-black",
         props: {},
         data() {
             return {}
@@ -16,10 +16,10 @@
 </script>
 
 <style scoped>
-.btn-white {
+.btn-black {
     padding: 1.5em 4em;
-    background: #f7f7f7;
-    border: 1px solid #f7f7f7;
+    background: #191919;
+    border: 1px solid #191919;
     border-radius: 0px;
     font-size: 12px;
     font-weight: 400;
@@ -27,7 +27,7 @@
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #191919;
+    color: #FFFFFF;
     cursor: pointer;
 }
 </style>

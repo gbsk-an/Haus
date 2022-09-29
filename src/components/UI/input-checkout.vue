@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "InputCheckout",
+        name: "input-checkout",
         props: {},
         data() {
             return {}
@@ -17,7 +17,7 @@
 .input-checkout {
     position: relative;
     display: block;
-    width: 284px;
+    width: 384px;
     padding: .6em 1em;
     color: #747474;
     background-color: #ffffff;

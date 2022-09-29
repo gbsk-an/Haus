@@ -36,6 +36,14 @@ export default createStore({
     },
     DELETE_FROM_CART: (state, index) => {
       state.cart.splice(index, 1)
+    },
+    PLUS: (state, index) => {
+      state.cart[index].quantity++
+    },
+    MINUS: (state, index) => {
+      if (state.cart[index].quantity > 1) {
+        state.cart[index].quantity--
+      }
     }
   },
   actions: {
@@ -57,7 +65,13 @@ export default createStore({
     },
     DELETE_FROM_CART({commit}, index){
       commit('DELETE_FROM_CART', index)
-    }
+    },
+    QTYMINUS_CART_ITEM({commit}, index) {
+      commit('MINUS', index)
+    },
+    QTYPLUS_CART_ITEM({commit}, index) {
+      commit('PLUS', index)
+    },
   },
   modules: {
   }

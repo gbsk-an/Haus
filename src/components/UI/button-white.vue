@@ -1,12 +1,12 @@
 <template>
-    <button class="btn-clear-filters">
+    <button type="button" class="btn-white">
         <slot></slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "BtnClearFilters",
+        name: "btn-white",
         props: {},
         data() {
             return {}
@@ -16,19 +16,18 @@
 </script>
 
 <style scoped>
-.btn-clear-filters {
-    padding: 1.5em 2em;
+.btn-white {
+    padding: 1.5em 4em;
     background: #f7f7f7;
-    border: 1px solid #141414;
+    border: 1px solid #f7f7f7;
     border-radius: 0px;
-    font-family: 'Playfair Display', serif;
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
     line-height: 14px;
     text-align: center;
     letter-spacing: 1px;
     text-transform: uppercase;
-    color: #141414;
+    color: #191919;
     cursor: pointer;
 }
 </style>

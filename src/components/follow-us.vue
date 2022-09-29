@@ -4,7 +4,7 @@
             <div class="follow-content_mood">
                 <h2>Set the mood</h2>
                 <p>Curated playlists from Woody + Helena, plus some of our friends and favorite brands.</p>
-                <BtnWhite>Spotify</BtnWhite>
+                <btn-white>Spotify</btn-white>
             </div>
             <div class="follow-content_social">
                 <p>Follow us, share us, drink Ha(us)</p>
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import BtnWhite from '@/components/UI/buttonWhite.vue'
+import BtnWhite from '@/components/UI/button-white.vue'
 
     export default {
-        name: "FollowUs",
+        name: "follow-us",
         components: {
             BtnWhite
         },

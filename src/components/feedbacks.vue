@@ -17,7 +17,7 @@
 
 <script>
     export default {
-        name: "Feedbacks",
+        name: "feedbacks",
         props: {},
         data() {
             return {}

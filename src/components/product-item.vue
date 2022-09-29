@@ -13,17 +13,19 @@
             <p class="product-price_value">${{product.price}}.00</p>
         </div>
         <div class="product-image">
-          <img :src="require('../assets/' +  product.image)" alt="product image" />
+          <img 
+            :src="require('../assets/' +  product.image)" 
+            alt="product image" />
         </div> 
-        <BtnBlack @click="addToCart">Add to cart</BtnBlack>
+        <btn-black @click="addToCart">Add to cart</btn-black>
     </div>
 </template>
 
 <script>
-import BtnBlack from './UI/buttonBlack.vue';
+import BtnBlack from '@/components/UI/button-black.vue';
 
     export default {
-        name: "productItem",
+        name: "product-item",
         components: {
             BtnBlack,
         },

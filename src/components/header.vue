@@ -1,12 +1,12 @@
 <template>
-    <header class="navigation">
+    <header class="navigation hheader">
         <div>
             <a href="#" class="navigation-item">shop</a>
             <a href="#" class="navigation-item">membership</a>
             <a href="#" class="navigation-item">our story</a>
         </div>
         <div class="logo">
-            <img src="../assets/logo.svg" class="navigation-item">
+            <img src="../assets/logo.svg" class="navigation-item" alt="HAUS logo">
         </div>
         <div class="navigation-flex">
             <a href="#" class="navigation-item">newsletter</a>
@@ -21,7 +21,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
     export default {
-        name: "Header",
+        name: "header",
         props: {},
         data() {
             return {
@@ -42,7 +42,7 @@ import { mapGetters, mapActions } from 'vuex';
 </script>
 
 <style lang="scss" scoped>
-header {
+.hheader {
     padding: 2em 2em 1em;
     background-color: #996b607c;
     z-index: 100;

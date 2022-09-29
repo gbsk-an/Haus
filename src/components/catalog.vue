@@ -6,11 +6,11 @@
         <div class="container">
             <div class="container-sort">
                 <h-select 
-                :options="options"
-                :selected="selected"
-                @select="sortByOptions"                
+                    :options="options"
+                    :selected="selected"
+                    @select="sortByOptions"                
                 />
-                <BtnClearFilters>Clear Filters</BtnClearFilters>
+                <btn-clear-filters>Clear Filters</btn-clear-filters>
 
             </div>    
             <div class="container-catalog">
@@ -27,14 +27,14 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex'
-import productItem from '@/components/productItem.vue'
+import ProductItem from '@/components/product-item.vue'
 import hSelect from '@/components/UI/h-select.vue'
-import BtnClearFilters from '@/components/UI/buttonClearFilters.vue'
+import BtnClearFilters from '@/components/UI/button-clear-filters.vue'
 
 export default {
-    name: "Catalog",
+    name: "catalog",
     components: {
-        productItem,  
+        ProductItem,  
         hSelect,  
         BtnClearFilters,      
     },
