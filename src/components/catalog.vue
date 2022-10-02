@@ -12,7 +12,28 @@
                     @select="sortByOptions"                
                 />
                 <btn-clear-filters>Clear Filters</btn-clear-filters>
-
+                <div class="input-range">
+                    <input 
+                        v-model.number="minPrice" 
+                        @change="setRange"
+                        type="range" 
+                        min="0" 
+                        max="500" 
+                        step="10" 
+                    />
+                    <input 
+                        v-model.number="maxPrice"
+                        @change="setRange"
+                        type="range" 
+                        min="0"
+                        max="500" 
+                        step="10"
+                    />
+                </div>
+                <div class="range-value">
+                    <p>Min: {{minPrice}}</p>
+                    <p>Max: {{maxPrice}}</p>
+                </div>
             </div>    
             <div class="container-catalog">
                 <productItem 
@@ -51,6 +72,8 @@ export default {
                 {name: 'Price-high-to-low', value: 'price-high-to-low'},                                
             ],
             selected: 'Popular',
+            minPrice: 0,
+            maxPrice: 300,
             sortedProducts: []
         }
     },
@@ -97,10 +120,26 @@ export default {
                           
             }),            
             this.selected = option.name
+        },
+        sortByPrice(option) {
+            let vm = this;
+            this.sortedProducts = [...this.PRODUCTS]
+            this.sortedProducts = this.sortedProducts.filter(function(item) {
+                return item.price >= vm.minPrice && item.price <= vm.maxPrice
+            })
+        },
+        setRange() {
+            if (this.minPrice > this.maxPrice) {
+                let tmp = this.maxPrice;
+                this.maxPrice = this.minPrice;
+                this.minPrice = tmp
+            }
+            this.sortByPrice()
         }
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
+        this.sortByPrice()
     }
 }
 </script>
@@ -135,6 +174,36 @@ export default {
     &-quantity {
         font-size: 20px;
         font-weight: bold;
+    }
+}
+.input-range {
+    position: relative;
+    margin-top: 3em;
+
+    & > input {
+        width: 100%;
+        accent-color: #747474;
+    }
+}
+.input-range svg, .input-range input[type=range] {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+input[type=range]::-webkit-slider-thumb{
+    z-index: 2;
+    position: relative;
+    top: 2px;
+    margin-top: -7px;
+}
+.range-value {
+    display: flex;
+    justify-content: space-between;
+    & > p {
+        margin: 0;
+        color: #141414;
+        font-size: 17px;
+        font-weight: 400;
     }
 }
 </style>

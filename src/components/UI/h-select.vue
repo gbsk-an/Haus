@@ -77,5 +77,6 @@
     width: 100%;
     border: 1px solid #141414;      
     background-color: #ffffff;
+    z-index: 10;
 }
 </style>
