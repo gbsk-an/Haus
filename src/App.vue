@@ -1,19 +1,13 @@
-<template>
-  <Header />
-  <Main />
-  <Footer /> 
+<template>  
+  <Home />
 </template>
 
 <script>
-import Header from '@/components/header.vue';
-import Main from '@/components/main.vue'
-import Footer from './components/footer.vue';
+import Home from '@/components/home.vue'
 
   export default {
     components: {
-    Header,
-    Main,
-    Footer,
+      Home,
     },
     data() {
       return {

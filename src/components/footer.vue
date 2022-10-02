@@ -1,16 +1,16 @@
 <template>
-    <footer class="hfooter">
-        <div class="hfooter-container">
-            <div class="hhfooter-container_item hfooter-newsletter">
-                <h3 class="hfooter-newsletter_title">Stay posted</h3>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-container_item footer-newsletter">
+                <h3 class="footer-newsletter_title">Stay posted</h3>
                 <p>Let's be friends. Subscribe to our newsletter to receive updates on new launches, recipes, playlists, and more.</p>
-                <div class="hfooter-newsletter_form">
+                <div class="footer-newsletter_form">
                     <input type="mail" class="input-mail" placeholder="your mail">
                     <button type="submit" class="button-submit" value="submit">submit</button>
                 </div>
             </div>
-            <div class="hfooter-container_item hfooter-navigation">
-                <p class="hfooter-navigation_title">Explore</p>
+            <div class="footer-container_item footer-navigation">
+                <p class="footer-navigation_title">Explore</p>
                 <a href="#">Home</a>
                 <a href="#">Shop</a>
                 <a href="#">Membership</a>
@@ -20,27 +20,27 @@
                 <a href="#">Corporate Gifting</a>
                 <a href="#">Gift Card</a>
             </div>
-            <div class="hfooter-container_item hfooter-socials">
-                <p class="hfooter-socials_title">Follow</p>
+            <div class="footer-container_item footer-socials">
+                <p class="footer-socials_title">Follow</p>
                 <a href="#">Instagram</a>
                 <a href="#">Spotify</a>
                 <a href="#">Twitter</a>
                 <a href="#">Facebook</a>
             </div>
         </div>
-        <div class="hfooter-copyrights">
-            <p class="hfooter-copyrights_item">© Haus 2022</p>
-            <p class="hfooter-copyrights_item">Contact Us</p>
-            <p class="hfooter-copyrights_item">Return Policy</p>
-            <p class="hfooter-copyrights_item">Privacy Policy</p>
-            <p class="hfooter-copyrights_item">Terms and Conditions</p>
+        <div class="footer-copyrights">
+            <p class="footer-copyrights_item">© Haus 2022</p>
+            <p class="footer-copyrights_item">Contact Us</p>
+            <p class="footer-copyrights_item">Return Policy</p>
+            <p class="footer-copyrights_item">Privacy Policy</p>
+            <p class="footer-copyrights_item">Terms and Conditions</p>
         </div>
     </footer>
 </template>
 
 <script>
     export default {
-        name: "hfooter",
+        name: "h-footer",
         props: {},
         data() {
             return {}
@@ -50,7 +50,7 @@
 </script>
 
 <style lang="scss" scoped>
-.hfooter {
+.footer {
     background-color: #191919;
     width: 100%;
 

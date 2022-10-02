@@ -2,9 +2,9 @@
     <Header />
     <Hero />
     <Feedbacks />  
-        <slot>
-
-        </slot>
+    <slot>
+        
+    </slot>
     <IntroToAperol />
     <FollowUs />
     <Footer />

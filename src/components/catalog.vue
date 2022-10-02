@@ -1,4 +1,5 @@
 <template>
+<default-layout> 
     <div class="wrapper">
         <div class="products">
             <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
@@ -23,6 +24,7 @@
             </div>
         </div>
     </div>
+</default-layout>
 </template>
 
 <script>
@@ -76,10 +78,10 @@ export default {
         sortByOptions(option) {
             this.sortedProducts = [];
             let vm = this;
-            this.PRODUCTS.map(function(item) {
-                if (option.name === item.vintage) {
-                    vm.sortedProducts.push(item);
-                }else if (option.name == 'popular') {
+            this.PRODUCTS.map(function(item) { 
+                if (option.name === 'vintage' || item.vintage == 'True') {                    
+                    vm.sortedProducts.push(item);                        
+                } else if (option.name == 'popular') {
                     function sorting(a,b) {
                         let fa = a.name.toLowerCase(), fb = b.name.toLowerCase();
                         if (fa < fb) {
@@ -91,7 +93,6 @@ export default {
                         return 0
                     }
                     vm.sortedProducts.push(sorting(item))
-                    console.log(sorting(item))
                 }                
                           
             }),            

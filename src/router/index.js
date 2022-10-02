@@ -1,18 +1,30 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Catalog from '../components/catalog.vue'
-import Cart from '../components/cart.vue'
 
 const routes = [
   {
     path: '/',
+    name: 'home',
+    component: () => import('@/components/home.vue'),
+    meta: {
+      layouts: 'DefaultLayout'
+    }
+  },
+  {
+    path: '/catalog',
     name: 'catalog',
-    component: Catalog
+    component: () => import('@/components/catalog.vue'),
+    meta: {
+      layouts: 'CatalogLayout'
+    }
   },
   {
     path: '/cart',
     name: 'cart',
-    component: Cart,
-    props: true
+    component: () => import('@/components/cart.vue'),
+    props: true,
+    meta: {
+      layouts: 'CartLayout'
+    }
   },
 ]
 

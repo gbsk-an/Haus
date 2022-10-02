@@ -1,4 +1,5 @@
 <template>
+<cart-layout>
     <div class="cart">
         <div class="cart-navigation">
             <router-link :to="{name: 'catalog'}" class="cart-navigation_link">
@@ -30,7 +31,7 @@
                         <p class="shipping-method-block_text">The dates below are shipping times. There is 1-5 days warehouse processing time for all orders</p>
                     </div>
                     <div>
-                        <btn-grey type="submit" class="buttonProceedToPayment" value="submit-shipping">Proceed to Payment</btn-grey>
+                        <ButtonGrey type="submit" class="buttonProceedToPayment" value="submit-shipping">Proceed to Payment</ButtonGrey>
                     </div>
                     <div class="shipping-help">
                         <h4 class="shipping-help_title">Unable to Proceed to Payment?</h4>
@@ -41,7 +42,7 @@
             <div class="cart-item_products">
                 <div class="checkout-order-summary">
                     <h4 class="checkout-order-summary_title">Order Summary</h4>
-                    <!-- <p v-if="!cart_data.length">Cart is empty...</p> -->
+                    <p v-if="!CART.length">Cart is empty</p>
                     <div class="checkout-order-summary_total">
                         <div class="checkout-order-summary_total-tax"><span class="summary-label">Tax </span><span class="append">-</span></div>
                         <div class="checkout-order-summary_total-grand"><span class="summary-label">Total</span><span class="append">${{cartTotalCost}}</span></div>
@@ -58,7 +59,7 @@
             </div>            
         </div>
     </div>
-
+</cart-layout>
 </template>
 
 <script>
@@ -103,7 +104,7 @@ import { mapActions, mapGetters } from 'vuex'
                     return 0
                 }                
                 
-            },
+            }
         },
         methods: {
             ...mapActions([
@@ -127,8 +128,7 @@ import { mapActions, mapGetters } from 'vuex'
 <style lang="scss" scoped>
 .cart {
     padding: 2em 0;
-    border-top: 1px solid #141414;
-    border-bottom: 1px solid #141414;
+    
     &-navigation {
         max-width: 1600px;
         margin: 0 auto;

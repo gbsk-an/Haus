@@ -1,7 +1,9 @@
 <template>
-    <header class="navigation hheader">
-        <div>
-            <a href="#" class="navigation-item">shop</a>
+    <header class="navigation header">
+        <div class="navigation-flex">
+            <router-link :to="{name: 'catalog'}" class="navigation-item" target="_blank">
+                <div>shop</div>
+            </router-link> 
             <a href="#" class="navigation-item">membership</a>
             <a href="#" class="navigation-item">our story</a>
         </div>
@@ -11,7 +13,7 @@
         <div class="navigation-flex">
             <a href="#" class="navigation-item">newsletter</a>
             <a href="#" class="navigation-item">account</a>
-            <router-link :to="{name: 'cart', params: {cart_data: CART}}" class="navigation-item">
+            <router-link :to="{name: 'cart'}" class="navigation-item">
                 <div>cart <span class="cart-items">({{CART.length}})</span></div>
             </router-link>            
         </div>
@@ -21,7 +23,7 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
     export default {
-        name: "header",
+        name: "h-header",
         props: {},
         data() {
             return {
@@ -42,7 +44,7 @@ import { mapGetters, mapActions } from 'vuex';
 </script>
 
 <style lang="scss" scoped>
-.hheader {
+.header {
     padding: 2em 2em 1em;
     background-color: #996b607c;
     z-index: 100;

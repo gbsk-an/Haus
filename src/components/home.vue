@@ -1,13 +1,5 @@
 <template>
-    <main>
-        <hero />
-        <feedbacks />
-        <keep-alive>
-            <router-view></router-view>
-        </keep-alive>
-        <intro-to-aperol />
-        <follow-us />
-    </main>
+    <router-view></router-view>
 </template>
 
 <script>
@@ -17,7 +9,7 @@ import IntroToAperol from '@/components/intro-to-aperol.vue'
 import FollowUs from '@/components/follow-us.vue'
 
     export default {
-        name: "main",
+        name: "home",
         components: {
             Hero,            
             Feedbacks,
