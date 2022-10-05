@@ -23,6 +23,33 @@ const routes = [
       layouts: 'CartLayout'
     }
   },
+  {
+    path: '/authorization',
+    name: 'authorization',
+    component: () => import('@/components/authorization.vue'),
+    props: true,
+    meta: {
+      layouts: 'AuthorizationLayout'
+    }
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: () => import('@/components/register.vue'),
+    props: true,
+    meta: {
+      // layouts: 'AuthorizationLayout'
+    }
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: () => import('@/components/forgot-password.vue'),
+    props: true,
+    meta: {
+      // layouts: 'AuthorizationLayout'
+    }
+  },
 ]
 
 const router = createRouter({

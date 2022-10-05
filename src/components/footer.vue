@@ -177,7 +177,7 @@
     font-size: 9px;
     line-height: 14px;
     letter-spacing: 0.12px;
-    text-transform: uppercase;
+    text-transform: uppercase;    
 }
 .button-submit {
     background-color: transparent;

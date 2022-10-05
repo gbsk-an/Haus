@@ -15,7 +15,9 @@
         </div>
         <div class="navigation-flex">
             <a href="#" class="navigation-item">newsletter</a>
-            <a href="#" class="navigation-item">account</a>
+            <router-link :to="{name: 'authorization'}" class="navigation-item">
+                <div>account</div>
+            </router-link>            
             <router-link :to="{name: 'cart'}" class="navigation-item">
                 <div>cart <span class="cart-items">({{CART.length}})</span></div>
             </router-link>            
