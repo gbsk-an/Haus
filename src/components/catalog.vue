@@ -21,13 +21,19 @@
                         v-model="searchValue"
                     />
                     <button 
-                        type="button" 
+                        type="submit" 
                         class="search-filed_button" 
                         value="submit"
-                        @click="search">
+                        @click="search(searchValue)">
                     </button>
                 </div>
-                <btn-clear-filters>Clear Filters</btn-clear-filters>
+                <btn-clear-filters
+                    type="submit" 
+                    value="submit"
+                    @click="clearFilters"
+                >                
+                Clear Filters
+                </btn-clear-filters>
                 <div class="input-range">
                     <input 
                         v-model.number="minPrice" 
@@ -119,26 +125,15 @@ export default {
         },
         sortByOptions(option) {
             this.sortedProducts = [];
-            let vm = this;
-            this.PRODUCTS.map(function(item) { 
-                if (option.name == 'vintage' || item.vintage == 'True') {                    
-                    vm.sortedProducts.push(item);                        
-                } else if (option.name == 'popular') {
-                    function sorting(a,b) {
-                        let fa = a.name.toLowerCase(), fb = b.name.toLowerCase();
-                        if (fa < fb) {
-                            return -1
-                        }
-                        if (fa > fb) {
-                            return 1
-                        }
-                        return 0
-                    }
-                    vm.sortedProducts.push(sorting(item))
-                }                
-                          
-            }),            
-            this.selected = option.name
+            let vm = this;  
+            this.selected = option.value;           
+            this.PRODUCTS.filter(function(item) { 
+                if (option.value == 'vintage') {                    
+                    if (item.vintage != 'False') {
+                        vm.sortedProducts.push(item)
+                    }                        
+                }                      
+            })                    
         },
         sortByPrice(option) {
             let vm = this;
@@ -157,24 +152,26 @@ export default {
         },
         search(value) {
             this.GET_SEARCH_VALUE_VUEX(value);
-            
         },
         sortProductsBySearch(value) {
             this.sortedProducts = [...this.PRODUCTS]
             if (value) {
                 this.sortedProducts = this.sortedProducts.filter(function (item) {
-                    return item.name.includes(value)
+                    return item.name.toLowerCase().includes(value.toLowerCase())
                 })
             } else {
                 this.sortedProducts = this.PRODUCTS;
-            }
-            
+            }            
+        },
+        clearFilters() {
+            this.searchValue = '';
+            this.GET_SEARCH_VALUE_VUEX();
         }
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
         .then((response) => {
-            if (response.data) {
+            if (response) {
                 this.sortByPrice()
                 this.sortProductsBySearch(this.SEARCH_VALUE)
             }

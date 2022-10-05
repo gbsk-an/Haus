@@ -60,7 +60,10 @@ export default createStore({
       })
       .then(products => {        
         commit('SET_PRODUCTS_TO_STATE', products.data);
-        return products;
+        return products;  
+      })
+      .then(products => {
+        console.log(products)
       })
       .catch(error => {
         console.log(error);
@@ -82,7 +85,5 @@ export default createStore({
     GET_SEARCH_VALUE_VUEX({commit}, value) {
       commit('SET_SEARCH_VALUE_VUEX', value)
     }
-  },
-  modules: {
   }
 })
