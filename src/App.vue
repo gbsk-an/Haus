@@ -1,13 +1,17 @@
-<template>  
-  <Home />
+<template> 
+  <MainWrapper>
+    <Home />
+  </MainWrapper> 
+  
 </template>
 
 <script>
 import Home from '@/components/home.vue'
-
+import MainWrapper from '@/components/wrapper/main-wrapper.vue'
   export default {
     components: {
       Home,
+      MainWrapper
     },
     data() {
       return {

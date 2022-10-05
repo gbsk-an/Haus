@@ -1,14 +1,17 @@
 <template>
     <header class="navigation header">
         <div class="navigation-flex">
-            <router-link :to="{name: 'catalog'}" class="navigation-item" target="_blank">
-                <div>shop</div>
+            <router-link :to="{name: 'catalog'}" class="navigation-item">
+                <div>catalog</div>
             </router-link> 
             <a href="#" class="navigation-item">membership</a>
             <a href="#" class="navigation-item">our story</a>
         </div>
         <div class="logo">
-            <img src="../assets/logo.svg" class="navigation-item" alt="HAUS logo">
+            <Loading v-if="isLoading"></Loading>
+            <router-link :to="{name: 'home'}" class="navigation-item">
+                <img src="../assets/logo.svg" class="navigation-item" alt="HAUS logo" />
+            </router-link>            
         </div>
         <div class="navigation-flex">
             <a href="#" class="navigation-item">newsletter</a>
@@ -22,12 +25,16 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex';
+import Loading from '@/components/loading.vue'
     export default {
         name: "h-header",
+        components: {
+            Loading
+        },
         props: {},
         data() {
             return {
-                
+                isLoading: true
             }
         },
         computed: {
@@ -39,6 +46,11 @@ import { mapGetters, mapActions } from 'vuex';
             ...mapActions ([
                 'ADD_TO_CART'
             ])
+        },
+        mounted() {
+            setTimeout(() => {
+            this.isLoading = false;
+            }, 700);
         }
     }
 </script>

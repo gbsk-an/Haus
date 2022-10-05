@@ -5,6 +5,7 @@ export default createStore({
   state: {
     products: [],
     cart: [],
+    searchValue: ''
   },
   getters: {
     PRODUCTS(state) {
@@ -12,6 +13,9 @@ export default createStore({
     },
     CART(state) {
       return state.cart;
+    },
+    SEARCH_VALUE(state) {
+      return state.searchValue;
     }
   },
   mutations: {
@@ -44,6 +48,9 @@ export default createStore({
       if (state.cart[index].quantity > 1) {
         state.cart[index].quantity--
       }
+    },
+    SET_SEARCH_VALUE_VUEX: (state, value) => {
+      state.searchValue = value;
     }
   },
   actions: {
@@ -72,6 +79,9 @@ export default createStore({
     QTYPLUS_CART_ITEM({commit}, index) {
       commit('PLUS', index)
     },
+    GET_SEARCH_VALUE_VUEX({commit}, value) {
+      commit('SET_SEARCH_VALUE_VUEX', value)
+    }
   },
   modules: {
   }

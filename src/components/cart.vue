@@ -11,19 +11,19 @@
                 <div class="checkout-section">
                     <div class="login-section">
                         <h4 class="login-section_title">Your Email Address</h4>
-                        <InputCheckout placeholder="your email adress" /> 
+                        <InputCheckout type="email" placeholder="your email adress" /> 
                     </div>
                     <div class="shipping-section">
                         <h4 class="shipping-section_title">Delivery Address</h4>
                         <div class="shipping-section_inputs">
-                            <input-checkout placeholder="first name" /> 
-                            <input-checkout placeholder="last name" /> 
-                            <input-checkout placeholder="country" /> 
-                            <input-checkout placeholder="city" /> 
-                            <input-checkout placeholder="region" /> 
-                            <input-checkout placeholder="zip code" /> 
-                            <input-checkout placeholder="contact phone" /> 
-                            <input-checkout placeholder="date of birth (MM/DD/YYYY)" /> 
+                            <input-checkout type="text" placeholder="first name" /> 
+                            <input-checkout type="text" placeholder="last name" /> 
+                            <input-checkout type="text" placeholder="country" /> 
+                            <input-checkout type="text" placeholder="city" /> 
+                            <input-checkout type="text" placeholder="region" /> 
+                            <input-checkout type="text" placeholder="zip code" /> 
+                            <input-checkout type="number" placeholder="contact phone" /> 
+                            <input-checkout type="month" placeholder="date of birth" /> 
                         </div>                        
                     </div>
                     <div class="shipping-method-block">

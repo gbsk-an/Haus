@@ -1,5 +1,5 @@
 <template>
-    <input type="email" class="input-checkout" required> 
+    <input class="input-checkout" required> 
 </template>
 
 <script>

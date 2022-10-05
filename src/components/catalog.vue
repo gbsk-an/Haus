@@ -1,8 +1,10 @@
 <template>
-<default-layout> 
+<catalog-layout> 
     <div class="wrapper">
-        <div class="products">
-            <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
+        <div class="section-search">
+            <div class="products">
+                <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
+            </div>
         </div>
         <div class="container">
             <div class="container-sort">
@@ -11,6 +13,20 @@
                     :selected="selected"
                     @select="sortByOptions"                
                 />
+                <div class="search-filed">
+                    <input
+                        type="text"
+                        class="search-filed_input"
+                        placeholder="search..."
+                        v-model="searchValue"
+                    />
+                    <button 
+                        type="button" 
+                        class="search-filed_button" 
+                        value="submit"
+                        @click="search">
+                    </button>
+                </div>
                 <btn-clear-filters>Clear Filters</btn-clear-filters>
                 <div class="input-range">
                     <input 
@@ -45,7 +61,7 @@
             </div>
         </div>
     </div>
-</default-layout>
+</catalog-layout>
 </template>
 
 <script>
@@ -74,13 +90,15 @@ export default {
             selected: 'Popular',
             minPrice: 0,
             maxPrice: 300,
-            sortedProducts: []
+            sortedProducts: [],
+            searchValue: ''
         }
     },
     computed: {
         ...mapGetters([
             'PRODUCTS',
-            'CART'
+            'CART',
+            'SEARCH_VALUE'
         ]),
         filteredProducts() {
             if (this.sortedProducts.length) {
@@ -93,7 +111,8 @@ export default {
     methods: {
         ...mapActions([
             'GET_PRODUCTS_FROM_API',
-            'ADD_TO_CART'
+            'ADD_TO_CART',
+            'GET_SEARCH_VALUE_VUEX'
         ]),
         addToCart(data) {
             this.ADD_TO_CART(data)
@@ -102,7 +121,7 @@ export default {
             this.sortedProducts = [];
             let vm = this;
             this.PRODUCTS.map(function(item) { 
-                if (option.name === 'vintage' || item.vintage == 'True') {                    
+                if (option.name == 'vintage' || item.vintage == 'True') {                    
                     vm.sortedProducts.push(item);                        
                 } else if (option.name == 'popular') {
                     function sorting(a,b) {
@@ -135,11 +154,36 @@ export default {
                 this.minPrice = tmp
             }
             this.sortByPrice()
+        },
+        search(value) {
+            this.GET_SEARCH_VALUE_VUEX(value);
+            
+        },
+        sortProductsBySearch(value) {
+            this.sortedProducts = [...this.PRODUCTS]
+            if (value) {
+                this.sortedProducts = this.sortedProducts.filter(function (item) {
+                    return item.name.includes(value)
+                })
+            } else {
+                this.sortedProducts = this.PRODUCTS;
+            }
+            
         }
     },
     mounted() {
         this.GET_PRODUCTS_FROM_API()
-        this.sortByPrice()
+        .then((response) => {
+            if (response.data) {
+                this.sortByPrice()
+                this.sortProductsBySearch(this.SEARCH_VALUE)
+            }
+        })        
+    },
+    watch: {
+        SEARCH_VALUE() {
+            this.sortProductsBySearch(this.SEARCH_VALUE)
+        }
     }
 }
 </script>
@@ -168,10 +212,60 @@ export default {
         gap: 1em;
     }
 }
-.products {
-    text-align: right;
 
-    &-quantity {
+.section-search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 2em;
+    gap: 0 2em;  
+}
+
+.search-filed {
+    display: flex;
+    border: 1px solid #141414;
+    
+
+    &_input {
+        padding: 1em;
+        background-color: transparent;
+        color: #818181;
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        outline-offset: 0;
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        letter-spacing: 0.12px;
+    }
+    &_button {
+        position: relative;        
+        margin-left: -3em;
+        padding: 1em 1.2em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 32px;
+            background-image: url("../assets/search.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+          }
+    }
+}
+.products {
+    &>p {
+        margin: 0;
+    }
+        &-quantity {
         font-size: 20px;
         font-weight: bold;
     }

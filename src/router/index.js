@@ -5,9 +5,6 @@ const routes = [
     path: '/',
     name: 'home',
     component: () => import('@/components/home.vue'),
-    meta: {
-      layouts: 'DefaultLayout'
-    }
   },
   {
     path: '/catalog',
