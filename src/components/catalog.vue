@@ -128,11 +128,19 @@ export default {
             let vm = this;  
             this.selected = option.value;           
             this.PRODUCTS.filter(function(item) { 
-                if (option.value == 'vintage') {                    
-                    if (item.vintage != 'False') {
+                if (option.value === 'vintage') {                    
+                    if (item.vintage !== 'False') {
                         vm.sortedProducts.push(item)
-                    }                        
-                }                      
+                    }  
+                } else if (option.value === 'rating') {
+                    vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.rating - b.rating)                      
+                } else if (option.value === 'price-low-to-high') {
+                    vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.price - b.price)
+                } else if (option.value === 'price-high-to-low') {
+                    vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => b.price - a.price)
+                } else if (option.value === 'popular') {
+                    vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.popular - b.popular)
+                }             
             })                    
         },
         sortByPrice(option) {
@@ -165,6 +173,7 @@ export default {
         },
         clearFilters() {
             this.searchValue = '';
+            this.selected = 'Popular';
             this.GET_SEARCH_VALUE_VUEX();
         }
     },

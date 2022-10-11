@@ -8,7 +8,7 @@
 This project implements basic shopping cart and catalog features:
 * Pull products list from API
 * Add/Remove item to shopping cart
-* Filter/sort items in catalog
+* Filter, sort and search items in catalog
 
 ## Preview
 ![screenrecord](https://user-images.githubusercontent.com/95074782/193079880-9cd946fc-ef17-484c-aac0-3f16072d28c0.gif)
