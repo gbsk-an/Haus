@@ -2,7 +2,13 @@
 
 ## Technical details
 
-<img src="https://badgen.net/badge/Vue/3.2.13/blue" /> <img src="https://badgen.net/badge/Vue-router/4.1.5/blue" /> <img src="https://badgen.net/badge/Vuex/4.0.2/blue"> <img src="https://badgen.net/badge/Axios/0.27.2/green"> <img src="https://badgen.net/badge/json-server/0.17.0/green"> <img src="https://badgen.net/badge/SASS/1.55.0/green">
+![Vue.js](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![Vuex](https://img.shields.io/badge/VueX-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![Vue Router](https://img.shields.io/badge/VueRouter-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D)
+![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Axios](https://img.shields.io/badge/Axios-100000?style=for-the-badge&logo=axios&logoColor=white)
+![Json-server](https://img.shields.io/badge/Json.server-13529a?style=for-the-badge&logo=jsonserver&logoColor=F7DF1E)
+![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
 
 ## Features
 This project implements basic shopping cart and catalog features:
