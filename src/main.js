@@ -12,10 +12,12 @@ import AuthorizationLayout from './layouts/authorization-layout.vue'
 const app = createApp({
   render: () => h(App)
 });
+components.forEach(component => {
+  app.component(component.name, component)
+});
 
 app.use(router);
 app.use(store);
-app.use(components);
 
 app.component('cart-layout', CartLayout)
 app.component('catalog-layout', CatalogLayout)

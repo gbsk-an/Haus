@@ -4,12 +4,7 @@
 
 <script>
     export default {
-        name: "input-checkout",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "input-checkout"
     }
 </script>
 

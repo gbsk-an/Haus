@@ -1,17 +1,14 @@
 <template>
     <button type="button" class="btn-grey">
-        <slot></slot>
+        <slot>
+            
+        </slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "btn-grey",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "btn-grey"
     }
 </script>
 

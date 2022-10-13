@@ -25,7 +25,6 @@
 <script>
     export default {
         name: "cart-item",
-        components: {},
         props: {
             cart_item_data: {
                 type: Object,
@@ -34,10 +33,6 @@
                 }
             }
         },
-        data() {
-            return {}
-        },
-        computed: {},
         methods: {
             deletFromCart() {
                 this.$emit('deletFromCart')

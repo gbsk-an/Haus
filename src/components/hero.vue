@@ -11,24 +11,15 @@
             <h1 class="hero-text_title">Alcohol for the<br />modern drinker</h1>
             <p class="hero-text_description">Light and refreshing flavors made with real, clean ingredients you<br />can feel good about. Just pour, sip, and enjoy.</p>
             <router-link :to="{name: 'catalog'}" class="navigation-item">
-                <ButtonTransparent>Shop all</ButtonTransparent>
+                <btn-transparent>Shop all</btn-transparent>
             </router-link>            
         </div>
     </div>
 </template>
 
 <script>
-import ButtonTransparent from '@/components/UI/button-transparent.vue';
     export default {        
-        name: "hero",
-        components: {
-            ButtonTransparent
-        },
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "hero"
     }
 </script>
 

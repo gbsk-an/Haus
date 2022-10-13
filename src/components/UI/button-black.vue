@@ -1,17 +1,14 @@
 <template>
     <button type="submit" class="btn-black">
-        <slot></slot>
+        <slot>
+            
+        </slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "btn-black",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "btn-black"
     }
 </script>
 

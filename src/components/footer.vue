@@ -40,12 +40,7 @@
 
 <script>
     export default {
-        name: "h-footer",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "h-footer"
     }
 </script>
 

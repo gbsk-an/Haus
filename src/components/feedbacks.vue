@@ -17,12 +17,7 @@
 
 <script>
     export default {
-        name: "feedbacks",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "feedbacks"
     }
 </script>
 

@@ -23,12 +23,7 @@
             IntroToAperol,
             FollowUs,             
             Footer,
-         },
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {},
+         }
     }
 </script>
 

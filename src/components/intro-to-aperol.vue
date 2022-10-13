@@ -16,12 +16,7 @@
 
 <script>
     export default {
-        name: "intro-to-aperol",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "intro-to-aperol"
     }
 </script>
 

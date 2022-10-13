@@ -1,17 +1,14 @@
 <template>
     <button class="btn-clear-filters">
-        <slot></slot>
+        <slot>
+
+        </slot>
     </button>
 </template>
 
 <script>
     export default {
-        name: "btn-clear-filters",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "btn-clear-filters"
     }
 </script>
 

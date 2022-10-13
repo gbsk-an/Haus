@@ -4,12 +4,7 @@
 
 <script>
     export default {
-        name: "input-authorization",
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "input-authorization"
     }
 </script>
 

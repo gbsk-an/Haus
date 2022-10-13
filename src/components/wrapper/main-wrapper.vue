@@ -4,15 +4,7 @@
 
 <script>
     export default {
-        name: "main-wrapper",
-        components: { 
-
-         },
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {},
+        name: "main-wrapper"
     }
 </script>
 

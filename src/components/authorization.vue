@@ -16,7 +16,7 @@
                 required 
                 v-model="password"
             />
-            <BtnBlack>log in</BtnBlack>
+            <btn-black>log in</btn-black>
             <div class="authorization-more">
                 <router-link :to="{name: 'register'}" class="authorization-more_item">
                     <div>Create account</div>
@@ -31,15 +31,8 @@
 </template>
 
 <script>
-    import InputAuthorization from '@/components/UI/input-authorization.vue'
-    import BtnBlack from '@/components/UI/button-black.vue'
     export default {
         name: "authorization",
-        props: {},
-        components: {
-            InputAuthorization,
-            BtnBlack
-        },
         data() {
             return {
                 email: '',

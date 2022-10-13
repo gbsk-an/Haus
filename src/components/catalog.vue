@@ -3,7 +3,21 @@
     <div class="wrapper">
         <div class="section-search">
             <div class="products">
-                <p>Showing <span class="products-quantity">{{PRODUCTS.length}}</span> Products</p>
+                <p>Showing 
+                    <span 
+                        v-if="sortedProducts.length > 0" 
+                        class="products-quantity"
+                    >
+                        {{sortedProducts.length}}
+                    </span>
+                    <span 
+                        v-else 
+                        class="products-quantity"
+                    >
+                        {{PRODUCTS.length}}
+                    </span> 
+                        Products
+                </p>
             </div>
         </div>
         <div class="container">
@@ -24,8 +38,8 @@
                         type="submit" 
                         class="search-filed_button" 
                         value="submit"
-                        @click="search(searchValue)">
-                    </button>
+                        @click="search(searchValue)"
+                    />
                 </div>
                 <btn-clear-filters
                     type="submit" 
@@ -57,7 +71,7 @@
                     <p>Max: {{maxPrice}}</p>
                 </div>
             </div>    
-            <div class="container-catalog">
+            <div class="container-catalog">          
                 <productItem 
                     v-for="product in filteredProducts"
                     :key="product.name"
@@ -74,26 +88,23 @@
 import { mapActions, mapGetters } from 'vuex'
 import ProductItem from '@/components/product-item.vue'
 import hSelect from '@/components/UI/h-select.vue'
-import BtnClearFilters from '@/components/UI/button-clear-filters.vue'
 
 export default {
     name: "catalog",
     components: {
         ProductItem,  
-        hSelect,  
-        BtnClearFilters,      
+        hSelect,       
     },
     props: {},
     data() {
         return {            
             options: [
-                {name: 'Popular', value: 'popular'},
-                {name: 'Vintage', value: 'vintage'},    
+                {name: 'Popular', value: 'popular'},   
                 {name: 'Rating', value: 'rating'},
                 {name: 'Price-low-to-high', value: 'price-low-to-high'},
                 {name: 'Price-high-to-low', value: 'price-high-to-low'},                                
             ],
-            selected: 'Popular',
+            selected: '...',
             minPrice: 0,
             maxPrice: 300,
             sortedProducts: [],
@@ -128,11 +139,7 @@ export default {
             let vm = this;  
             this.selected = option.value;           
             this.PRODUCTS.filter(function(item) { 
-                if (option.value === 'vintage') {                    
-                    if (item.vintage !== 'False') {
-                        vm.sortedProducts.push(item)
-                    }  
-                } else if (option.value === 'rating') {
+                if (option.value === 'rating') {
                     vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.rating - b.rating)                      
                 } else if (option.value === 'price-low-to-high') {
                     vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.price - b.price)
@@ -140,7 +147,9 @@ export default {
                     vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => b.price - a.price)
                 } else if (option.value === 'popular') {
                     vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.popular - b.popular)
-                }             
+                } else {
+                    vm.sortedProducts = [...vm.PRODUCTS].sort((a, b) => a.popular - b.popular)
+                }            
             })                    
         },
         sortByPrice(option) {
@@ -173,7 +182,7 @@ export default {
         },
         clearFilters() {
             this.searchValue = '';
-            this.selected = 'Popular';
+            this.selected = '...';
             this.GET_SEARCH_VALUE_VUEX();
         }
     },

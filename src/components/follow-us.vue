@@ -19,18 +19,8 @@
 </template>
 
 <script>
-import BtnWhite from '@/components/UI/button-white.vue'
-
     export default {
-        name: "follow-us",
-        components: {
-            BtnWhite
-        },
-        props: {},
-        data() {
-            return {}
-        },
-        computed: {}
+        name: "follow-us"
     }
 </script>
 

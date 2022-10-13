@@ -11,7 +11,7 @@
                 <div class="checkout-section">
                     <div class="login-section">
                         <h4 class="login-section_title">Your Email Address</h4>
-                        <InputCheckout type="email" placeholder="your email adress" /> 
+                        <input-checkout type="email" placeholder="your email adress" /> 
                     </div>
                     <div class="shipping-section">
                         <h4 class="shipping-section_title">Delivery Address</h4>
@@ -31,7 +31,7 @@
                         <p class="shipping-method-block_text">The dates below are shipping times. There is 1-5 days warehouse processing time for all orders</p>
                     </div>
                     <div>
-                        <ButtonGrey type="submit" class="buttonProceedToPayment" value="submit-shipping">Proceed to Payment</ButtonGrey>
+                        <btn-grey type="submit" class="buttonProceedToPayment" value="submit-shipping">Proceed to Payment</btn-grey>
                     </div>
                     <div class="shipping-help">
                         <h4 class="shipping-help_title">Unable to Proceed to Payment?</h4>
@@ -64,15 +64,11 @@
 
 <script>
 import CartItem from '@/components/cart-item.vue'
-import InputCheckout from '@/components/UI/input-checkout.vue'
-import ButtonGrey from '@/components/UI/button-grey.vue'
 import { mapActions, mapGetters } from 'vuex'
     export default {
         name: "cart",
         components: {
-            CartItem,
-            InputCheckout,
-            ButtonGrey
+            CartItem
         },
         props: {
             cart_data: {

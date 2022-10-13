@@ -22,13 +22,8 @@
 </template>
 
 <script>
-import BtnBlack from '@/components/UI/button-black.vue';
-
     export default {
         name: "product-item",
-        components: {
-            BtnBlack,
-        },
         props: {
             product: {
                 type: Object, 
@@ -38,12 +33,6 @@ import BtnBlack from '@/components/UI/button-black.vue';
                 }
             }
         },
-        data() {
-            return {    
-                
-            }            
-        },
-        computed: {},
         methods: {
             addToCart() {
                 this.$emit('addToCart', this.product);
