@@ -4,8 +4,8 @@
 </template>
 
 <script>
-import MenuDesktop from "@/components/menu/MenuDesktop.vue"
 import Loading from "@/components/loading.vue";
+import MenuDesktop from "@/components/menu/MenuDesktop.vue"
 import MenuMobile from "@/components/menu/MenuMobile.vue"
 export default {
   name: "HeaderCustom",

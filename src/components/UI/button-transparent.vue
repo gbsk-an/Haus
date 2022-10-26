@@ -17,7 +17,7 @@ export default {
 .btn-transparent {
   padding: 1.5em 4em;
   background-color: transparent;
-  border: 1px solid $defaultWhite;
+  border: 1px solid $themeWhite;
   color: $themeBlack;
   font-family: $themeFont;
   font-size: 12px;

@@ -1,13 +1,12 @@
 <template>
-  <header class="menu-mobile">
+  <header class="menu-mobile" v-if="menuVisibility != true">
     <router-link :to="{ name: 'home' }">
       <img
-        v-if="menuVisibility != true"
         src="@/assets/logo.svg"
         alt="HAUS logo"
       />
     </router-link>
-    <button-menu @click="showMenu" v-if="menuVisibility != true" />
+    <button-menu @click="showMenu" />
   </header>
   <MobileNav v-model:showSidebar="menuVisibility" />
 </template>

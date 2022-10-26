@@ -36,6 +36,10 @@ h1 {
   font-size: 73px;
   font-weight: 700;
   line-height: 96px;
+  @media (max-width: 576px) {
+    font-size: 58px;
+    line-height: 96px;
+  }
 }
 
 h2 {
