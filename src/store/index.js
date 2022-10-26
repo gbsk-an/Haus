@@ -1,11 +1,11 @@
-import { createStore } from 'vuex'
-import axios from 'axios'
+import { createStore } from "vuex";
+import axios from "axios";
 
 export default createStore({
   state: {
     products: [],
     cart: [],
-    searchValue: ''
+    searchValue: "",
   },
   getters: {
     PRODUCTS(state) {
@@ -16,7 +16,7 @@ export default createStore({
     },
     SEARCH_VALUE(state) {
       return state.searchValue;
-    }
+    },
   },
   mutations: {
     SET_PRODUCTS_TO_STATE: (state, products) => {
@@ -28,62 +28,62 @@ export default createStore({
         state.cart.map(function (item) {
           if (item.name === product.name) {
             isProductInCart = true;
-            item.quantity++
+            item.quantity++;
           }
-        })
+        });
         if (!isProductInCart) {
-          state.cart.push(product)
+          state.cart.push(product);
         }
       } else {
-        state.cart.push(product)
-      }      
+        state.cart.push(product);
+      }
     },
     DELETE_FROM_CART: (state, index) => {
-      state.cart.splice(index, 1)
+      state.cart.splice(index, 1);
     },
     PLUS: (state, index) => {
-      state.cart[index].quantity++
+      state.cart[index].quantity++;
     },
     MINUS: (state, index) => {
       if (state.cart[index].quantity > 1) {
-        state.cart[index].quantity--
+        state.cart[index].quantity--;
       }
     },
     SET_SEARCH_VALUE_VUEX: (state, value) => {
       state.searchValue = value;
-    }
+    },
   },
   actions: {
-    GET_PRODUCTS_FROM_API({commit}) {
-      return axios('http://localhost:3000/products', {
-        method: "GET"
+    GET_PRODUCTS_FROM_API({ commit }) {
+      return axios("http://localhost:3000/products", {
+        method: "GET",
       })
-      .then(products => {        
-        commit('SET_PRODUCTS_TO_STATE', products.data);
-        return products;  
-      })
-      .then(products => {
-        console.log(products)
-      })
-      .catch(error => {
-        console.log(error);
-        return error;
-      });
+        .then((products) => {
+          commit("SET_PRODUCTS_TO_STATE", products.data);
+          return products;
+        })
+        .then((products) => {
+          console.log(products);
+        })
+        .catch((error) => {
+          console.log(error);
+          return error;
+        });
     },
-    ADD_TO_CART({commit}, product) {
-      commit('SET_CART', product);
+    ADD_TO_CART({ commit }, product) {
+      commit("SET_CART", product);
     },
-    DELETE_FROM_CART({commit}, index){
-      commit('DELETE_FROM_CART', index)
+    DELETE_FROM_CART({ commit }, index) {
+      commit("DELETE_FROM_CART", index);
     },
-    QTYMINUS_CART_ITEM({commit}, index) {
-      commit('MINUS', index)
+    QTYMINUS_CART_ITEM({ commit }, index) {
+      commit("MINUS", index);
     },
-    QTYPLUS_CART_ITEM({commit}, index) {
-      commit('PLUS', index)
+    QTYPLUS_CART_ITEM({ commit }, index) {
+      commit("PLUS", index);
     },
-    GET_SEARCH_VALUE_VUEX({commit}, value) {
-      commit('SET_SEARCH_VALUE_VUEX', value)
-    }
-  }
-})
+    GET_SEARCH_VALUE_VUEX({ commit }, value) {
+      commit("SET_SEARCH_VALUE_VUEX", value);
+    },
+  },
+});
