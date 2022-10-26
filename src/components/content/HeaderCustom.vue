@@ -4,11 +4,11 @@
 </template>
 
 <script>
-import MenuDesktop from "@/components/menu-desktop.vue"
+import MenuDesktop from "@/components/menu/MenuDesktop.vue"
 import Loading from "@/components/loading.vue";
-import MenuMobile from "@/components/menu-mobile.vue"
+import MenuMobile from "@/components/menu/MenuMobile.vue"
 export default {
-  name: "h-header",
+  name: "HeaderCustom",
   components: {
     Loading,
     MenuDesktop,

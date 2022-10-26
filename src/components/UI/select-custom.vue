@@ -1,15 +1,15 @@
 <template>
-  <div class="h-select">
-    <p class="h-select_title">Sort by:</p>
-    <p @click="areOptionsVisible = !areOptionsVisible" class="h-select_selected">
+  <div class="select-custom">
+    <p class="select-custom_title">Sort by:</p>
+    <p @click="areOptionsVisible = !areOptionsVisible" class="select-custom_selected">
       {{ selected }}
     </p>
-    <div class="h-select_options" v-if="areOptionsVisible">
+    <div class="select-custom_options" v-if="areOptionsVisible">
       <p
         v-for="option in options"
         :key="option.value"
         @click="selectOption(option)"
-        class="h-select_options-item"
+        class="select-custom_options-item"
       >
         {{ option.name }}
       </p>
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: "h-select",
+  name: "select-custom",
   props: {
     options: {
       type: Array,
@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/styles/scss/variables";
-.h-select {
+.select-custom {
   position: relative;
   padding: 1em 0 0 0.6em;
   cursor: pointer;

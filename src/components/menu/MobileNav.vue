@@ -3,7 +3,7 @@
     <nav v-if="showSidebar" @click.stop="hideMenu" class="nav">
       <div class="nav-top">
         <router-link :to="{ name: 'home' }">
-          <img src="../assets/logo.svg" alt="HAUS logo" />
+          <img src="@/assets/logo.svg" alt="HAUS logo" />
         </router-link>
         <button-close class="nav-top_button" @click.stop="hideMenu" />
       </div>
@@ -17,7 +17,7 @@
         <router-link :to="{ name: 'authorization' }" class="nav-list_item">
           <p>account</p>
         </router-link>
-        <router-link :to="{ name: 'cart' }" class="nav-list_item">
+        <router-link :to="{ name: 'Cart' }" class="nav-list_item">
           <p>cart ({{ CART.length }})</p>
         </router-link>
       </div>
@@ -28,7 +28,7 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 export default {
-  name: "mobile-sidebar",
+  name: "MobileNav",
   props: {
     showSidebar: {
       type: Boolean,
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .nav {
   position: fixed;
   top: 0;

@@ -3,21 +3,21 @@
     <router-link :to="{ name: 'home' }">
       <img
         v-if="menuVisibility != true"
-        src="../assets/logo.svg"
+        src="@/assets/logo.svg"
         alt="HAUS logo"
       />
     </router-link>
     <button-menu @click="showMenu" v-if="menuVisibility != true" />
   </header>
-  <mobileSidebar v-model:showSidebar="menuVisibility" />
+  <MobileNav v-model:showSidebar="menuVisibility" />
 </template>
 
 <script>
-import mobileSidebar from "@/components/mobile-sidebar.vue";
+import MobileNav from "@/components/menu/MobileNav.vue";
 export default {
-  name: "menu-mobile",
+  name: "MenuMobile",
   components: {
-    mobileSidebar,
+    MobileNav,
   },
   data() {
     return {
@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .menu-mobile {
   position: fixed;
   width: 100%;

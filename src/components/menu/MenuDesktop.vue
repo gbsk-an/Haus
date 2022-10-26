@@ -10,7 +10,7 @@
     <div class="logo">
       <Loading v-if="isLoading"></Loading>
       <router-link :to="{ name: 'home' }" class="navigation-item">
-        <img src="../assets/logo.svg" class="navigation-item" alt="HAUS logo" />
+        <img src="@/assets/logo.svg" class="navigation-item" alt="HAUS logo" />
       </router-link>
     </div>
     <div class="navigation-flex">
@@ -18,7 +18,7 @@
       <router-link :to="{ name: 'authorization' }" class="navigation-item">
         <div>account</div>
       </router-link>
-      <router-link :to="{ name: 'cart' }" class="navigation-item">
+      <router-link :to="{ name: 'Cart' }" class="navigation-item">
         <div>
           cart <span class="cart-items">({{ CART.length }})</span>
         </div>
@@ -31,7 +31,7 @@
 import { mapGetters, mapActions } from "vuex";
 import Loading from "@/components/loading.vue";
 export default {
-  name: "h-header",
+  name: "MenuDesktop",
   components: {
     Loading,
   },
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .navigation {
   position: fixed;
   width: 100%;

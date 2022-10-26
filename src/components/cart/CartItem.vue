@@ -9,7 +9,7 @@
     </div>
     <div class="cart-item_body">
       <img
-        :src="require('../assets/' + cart_item_data.image)"
+        :src="require('@/assets/' + cart_item_data.image)"
         class="cart-item_image"
         alt="product image"
       />
@@ -34,7 +34,7 @@
 
 <script>
 export default {
-  name: "cart-item",
+  name: "CartItem",
   props: {
     cart_item_data: {
       type: Object,
@@ -88,7 +88,7 @@ export default {
         position: absolute;
         width: 14px;
         height: 14px;
-        background-image: url("../assets/close.svg");
+        background-image: url("@/assets/close.svg");
         background-repeat: no-repeat;
         background-position: center;
         transform: translate(-50%, -50%);

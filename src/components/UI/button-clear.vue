@@ -1,5 +1,5 @@
 <template>
-  <button class="btn-clear-filters">
+  <button class="btn-clear">
     <slot>
         
     </slot>
@@ -8,13 +8,13 @@
 
 <script>
 export default {
-  name: "btn-clear-filters",
+  name: "btn-clear",
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/styles/scss/variables";
-.btn-clear-filters {
+.btn-clear {
   padding: 1.5em 2em;
   background: $themeWhite;
   border: 1px solid $themeBlack;

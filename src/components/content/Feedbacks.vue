@@ -4,32 +4,32 @@
       <p class="feedbacks-item_title">
         "What makes Haus so special is its incredible flavors."
       </p>
-      <img src="../assets/food-and-wine.svg" alt="food and wine logo" />
+      <img src="@/assets/food-and-wine.svg" alt="food and wine logo" />
     </div>
     <div class="feedbacks-item">
       <p class="feedbacks-item_title">
         “For the wine or cocktail lover who’s tried it all and wants something
         new and refreshing.”
       </p>
-      <img src="../assets/new-yourk-times.svg" alt="the new yourk times logo" />
+      <img src="@/assets/new-yourk-times.svg" alt="the new yourk times logo" />
     </div>
     <div class="feedbacks-item">
       <p class="feedbacks-item_title">
         “Cleaner, responsibly sourced, and lower in alcohol.”
       </p>
-      <img src="../assets/bon-appetit.svg" alt="bon appetit logo" />
+      <img src="@/assets/bon-appetit.svg" alt="bon appetit logo" />
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "feedbacks",
+  name: "Feedbacks",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .feedbacks {
   margin: 0 auto;
   padding: 3.4em 0;

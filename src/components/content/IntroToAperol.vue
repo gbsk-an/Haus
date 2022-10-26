@@ -1,7 +1,7 @@
 <template>
   <div class="intro">
     <div class="intro-item">
-      <img src="../assets/background_2.png" />
+      <img src="@/assets/background_2.png" />
     </div>
     <div class="intro-item intro-text">
       <div>
@@ -20,12 +20,12 @@
 
 <script>
 export default {
-  name: "intro-to-aperol",
+  name: "IntroToAperol",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .intro {
   margin: 0 auto;
   padding: 2em 0;

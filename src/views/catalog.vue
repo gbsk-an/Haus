@@ -1,5 +1,5 @@
 <template>
-  <catalog-layout>
+  <HeaderFooterLayout>
     <div class="wrapper">
       <div class="section-search">
         <div class="products">
@@ -17,7 +17,7 @@
       </div>
       <div class="container">
         <div class="container-sort">
-          <h-select
+          <select-custom
             :options="options"
             :selected="selected"
             @select="sortByOptions"
@@ -36,9 +36,9 @@
               @click="search(searchValue)"
             />
           </div>
-          <btn-clear-filters type="submit" value="submit" @click="clearFilters">
+          <btn-clear type="submit" value="submit" @click="clearFilters">
             Clear Filters
-          </btn-clear-filters>
+          </btn-clear>
           <div class="input-range">
             <input
               v-model.number="minPrice"
@@ -72,19 +72,16 @@
         </div>
       </div>
     </div>
-  </catalog-layout>
+  </HeaderFooterLayout>
 </template>
 
 <script>
 import { mapActions, mapGetters } from "vuex";
 import ProductItem from "@/components/product-item.vue";
-import hSelect from "@/components/UI/h-select.vue";
-
 export default {
   name: "catalog",
   components: {
-    ProductItem,
-    hSelect,
+    ProductItem
   },
   props: {},
   data() {

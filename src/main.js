@@ -6,9 +6,7 @@ import App from "./App.vue";
 import "./styles/main.scss";
 
 //import layouts
-import CartLayout from "./layouts/cart-layout.vue";
-import CatalogLayout from "./layouts/catalog-layout.vue";
-import AuthorizationLayout from "./layouts/authorization-layout.vue";
+import HeaderFooterLayout from "./layouts/HeaderFooterLayout.vue";
 
 const app = createApp({
   render: () => h(App),
@@ -20,8 +18,6 @@ components.forEach((component) => {
 app.use(router);
 app.use(store);
 
-app.component("cart-layout", CartLayout);
-app.component("catalog-layout", CatalogLayout);
-app.component("authorization-layout", AuthorizationLayout);
+app.component("HeaderFooterLayout", HeaderFooterLayout);
 
 app.mount("#app");

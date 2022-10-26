@@ -23,16 +23,16 @@
 
 <script>
 export default {
-  name: "follow-us",
+  name: "FollowUs",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .follow {
   padding: 5em 0;
   width: 100%;
-  background-image: url("../assets/background_4.png");
+  background-image: url("@/assets/background_4.png");
   background-repeat: no-repeat;
   background-size: cover;
 

@@ -45,12 +45,12 @@
 
 <script>
 export default {
-  name: "h-footer",
+  name: "FooterCustom",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .footer {
   background-color: $themeBlackAlt;
   width: 100%;

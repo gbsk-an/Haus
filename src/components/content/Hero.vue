@@ -2,7 +2,7 @@
   <div class="hero">
     <div class="hero-background">
       <img
-        src="../assets/background.png"
+        src="@/assets/background.png"
         class="hero-background_image"
         alt="background"
         loading="lazy"
@@ -23,12 +23,12 @@
 
 <script>
 export default {
-  name: "hero",
+  name: "Hero",
 };
 </script>
 
 <style lang="scss" scoped>
-@import "../styles/scss/variables";
+@import "@/styles/scss/variables";
 .hero {
   display: flex;
   gap: 9em;

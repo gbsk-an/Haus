@@ -1,17 +1,12 @@
 <template>
-  <MainWrapper>
-    <Home />
-  </MainWrapper>
+  <router-view>
+
+  </router-view>
 </template>
 
 <script>
-import Home from "@/components/home.vue";
-import MainWrapper from "@/components/wrapper/main-wrapper.vue";
 export default {
-  components: {
-    Home,
-    MainWrapper,
-  },
+
 };
 </script>
 

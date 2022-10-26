@@ -1,5 +1,5 @@
 <template>
-  <cart-layout>
+  <HeaderFooterLayout>
     <div class="cart">
       <div class="cart-navigation">
         <router-link :to="{ name: 'catalog' }" class="cart-navigation_link">
@@ -80,14 +80,14 @@
         </div>
       </div>
     </div>
-  </cart-layout>
+  </HeaderFooterLayout>
 </template>
 
 <script>
-import CartItem from "@/components/cart-item.vue";
+import CartItem from "@/components/cart/CartItem.vue";
 import { mapActions, mapGetters } from "vuex";
 export default {
-  name: "cart",
+  name: "Cart",
   components: {
     CartItem,
   },
@@ -163,7 +163,7 @@ export default {
         position: absolute;
         width: 16px;
         height: 16px;
-        background-image: url("../assets/arrow-left.svg");
+        background-image: url("@/assets/arrow-left.svg");
         background-repeat: no-repeat;
         background-position: center;
         left: 0;

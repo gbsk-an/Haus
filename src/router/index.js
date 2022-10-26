@@ -4,23 +4,23 @@ const routes = [
   {
     path: "/",
     name: "home",
-    component: () => import("@/components/home.vue"),
+    component: () => import("@/views/home.vue"),
   },
   {
     path: "/catalog",
     name: "catalog",
-    component: () => import("@/components/catalog.vue"),
+    component: () => import("@/views/catalog.vue"),
     meta: {
-      layouts: "CatalogLayout",
+      layouts: "HeaderFooterLayout",
     },
   },
   {
     path: "/cart",
-    name: "cart",
-    component: () => import("@/components/cart.vue"),
+    name: "Cart",
+    component: () => import("@/components/cart/Cart.vue"),
     props: true,
     meta: {
-      layouts: "CartLayout",
+      layouts: "HeaderFooterLayout",
     },
   },
   {
@@ -29,7 +29,7 @@ const routes = [
     component: () => import("@/components/authorization.vue"),
     props: true,
     meta: {
-      layouts: "AuthorizationLayout",
+      layouts: "HeaderFooterLayout",
     },
   },
   {
@@ -38,7 +38,7 @@ const routes = [
     component: () => import("@/components/register.vue"),
     props: true,
     meta: {
-      // layouts: 'AuthorizationLayout'
+      // layouts: 'HeaderFooterLayout'
     },
   },
   {
@@ -47,7 +47,7 @@ const routes = [
     component: () => import("@/components/forgot-password.vue"),
     props: true,
     meta: {
-      // layouts: 'AuthorizationLayout'
+      // layouts: 'HeaderFooterLayout'
     },
   },
 ];
