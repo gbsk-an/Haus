@@ -200,6 +200,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .wrapper {
   margin: 0 auto;
   padding: 2em 0;
@@ -234,18 +235,18 @@ export default {
 
 .search-filed {
   display: flex;
-  border: 1px solid #141414;
+  border: 1px solid $themeBlack;
 
   &_input {
     padding: 1em;
     background-color: transparent;
-    color: #818181;
+    color: $themeGrey;
     appearance: none;
     border: none;
     border-radius: 0;
     outline: 0;
     outline-offset: 0;
-    font-family: "Playfair Display", serif;
+    font-family: $themeFont;
     font-weight: 400;
     font-size: 14px;
     line-height: 14px;
@@ -286,7 +287,7 @@ export default {
 
   & > input {
     width: 100%;
-    accent-color: #747474;
+    accent-color: $themeGreyAlt;
   }
 }
 .input-range svg,
@@ -306,7 +307,7 @@ input[type="range"]::-webkit-slider-thumb {
   justify-content: space-between;
   & > p {
     margin: 0;
-    color: #141414;
+    color: $themeBlack;
     font-size: 17px;
     font-weight: 400;
   }

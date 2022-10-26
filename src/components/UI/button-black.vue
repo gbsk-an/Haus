@@ -12,19 +12,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .btn-black {
   padding: 1.5em 4em;
-  background: #191919;
-  border: 1px solid #191919;
+  background: $themeBlackAlt;
+  border: 1px solid $themeBlackAlt;
   border-radius: 0px;
   font-size: 12px;
   font-weight: 400;
+  font-family: $themeFont;
   line-height: 14px;
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: $defaultWhite;
   cursor: pointer;
 }
 </style>

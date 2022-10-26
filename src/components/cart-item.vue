@@ -61,6 +61,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .cart-item {
   width: 600px;
   margin: 0 auto 1em;
@@ -69,7 +70,7 @@ export default {
   flex-direction: column;
   gap: 1em;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadowDefault;
 
   &_head {
     display: flex;
@@ -106,7 +107,7 @@ export default {
 }
 .brand-title {
   margin: 0 0 0.8em;
-  color: #141414;
+  color: $themeBlack;
   font-size: 24px;
   font-weight: 700;
 }
@@ -124,10 +125,10 @@ export default {
 
     &-btn {
       padding: 0.4em;
-      background-color: #74747469;
+      background-color: $greyClear;
       border: none;
-      color: #141414;
-      font-family: "Playfair Display", serif;
+      color: $themeBlack;
+      font-family: $themeFont;
       font-size: 14px;
       font-weight: 700;
       text-align: center;
@@ -135,8 +136,8 @@ export default {
       cursor: pointer;
       transition: all 0.1s;
       &:hover {
-        background-color: #7474747e;
-        color: #141414;
+        background-color: $greyClearAlt;
+        color: $themeBlack;
         outline: none;
         box-shadow: none;
       }

@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .feedbacks {
   margin: 0 auto;
   padding: 3.4em 0;
@@ -43,7 +44,7 @@ export default {
 
     &_title {
       margin-bottom: 1.6em;
-      color: #141414;
+      color: $themeBlack;
       font-size: 18px;
       font-weight: 600;
       line-height: 32px;

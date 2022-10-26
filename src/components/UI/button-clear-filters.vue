@@ -12,20 +12,21 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .btn-clear-filters {
   padding: 1.5em 2em;
-  background: #f7f7f7;
-  border: 1px solid #141414;
+  background: $themeWhite;
+  border: 1px solid $themeBlack;
   border-radius: 0px;
-  font-family: "Playfair Display", serif;
+  font-family: $themeFont;
   font-size: 15px;
   font-weight: 700;
   line-height: 14px;
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
-  color: #141414;
+  color: $themeBlack;
   cursor: pointer;
 }
 </style>

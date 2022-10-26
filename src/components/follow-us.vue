@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .follow {
   padding: 5em 0;
   width: 100%;
@@ -47,18 +48,18 @@ export default {
       padding: 2em 5em;
       width: fit-content;
       text-align: center;
-      background-color: #191919;
+      background-color: $themeBlackAlt;
 
       & > h2 {
         margin: 0;
-        color: #f7f7f7;
+        color: $themeWhite;
         font-weight: 400;
         font-size: 53px;
         line-height: 80px;
       }
 
       & > p {
-        color: #f7f7f7;
+        color: $themeWhite;
         font-weight: 400;
         font-size: 16px;
         line-height: 28px;
@@ -69,18 +70,18 @@ export default {
       padding: 2em 5em;
       width: fit-content;
       text-align: center;
-      background-color: #191919;
+      background-color: $themeBlackAlt;
 
       & > p {
         margin: 0 0 1em;
-        color: #f7f7f7;
+        color: $themeWhite;
         font-weight: 400;
         font-size: 16px;
         line-height: 28px;
       }
 
       &-link {
-        color: rgba(255, 255, 255, 0.6);
+        color: $whiteClear;
         text-decoration: none;
         font-weight: 400;
         font-size: 12px;

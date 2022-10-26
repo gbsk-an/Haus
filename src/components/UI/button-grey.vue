@@ -13,13 +13,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .btn-grey {
   width: 100%;
   padding: 1.5em 4em;
-  background-color: #74747469;
-  border: 1px solid #b1b1b1;
-  color: #141414;
-  font-family: "Playfair Display", serif;
+  background-color: $greyClear;
+  border: 1px solid $lightGrey;
+  color: $themeBlack;
+  font-family: $themeFont;
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
@@ -29,8 +30,8 @@ export default {
   cursor: pointer;
   transition: all 0.4s;
   &:hover {
-    background-color: #7474747e;
-    color: #141414;
+    background-color: $greyClearAlt;
+    color: $themeBlack;
     outline: none;
     box-shadow: none;
   }

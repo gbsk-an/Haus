@@ -40,44 +40,52 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .product {
   display: flex;
   align-items: center;
   flex-direction: column;
   padding: 2em;
   width: 300px;
-  background-color: rgb(235, 235, 235);
+  background-color: $themeWhiteAlt;
   border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: $shadowDefault;
 
   &-brand {
+    text-align: center;
     &_title {
       margin: 0.6em 0 0.8em;
-      color: #141414;
+      color: $themeBlack;
       font-size: 22px;
       font-weight: 700;
     }
   }
 
   &-name {
+    text-align: center;
     &_title {
       margin: 0 0 2em;
+      color: $themeBlack;
       font-size: 17px;
       font-weight: 400;
     }
   }
 
   &-attribute {
+    text-align: center;
     &_title {
       margin: 0 0 0.8em;
+      color: $themeBlack;
       font-size: 17px;
       font-weight: 400;
     }
   }
 
   &-price {
+    text-align: center;
     &_value {
       margin: 1em 0;
+      color: $themeBlack;
       font-size: 19px;
       font-weight: 700;
     }

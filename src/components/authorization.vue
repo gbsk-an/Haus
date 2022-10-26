@@ -60,6 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .authorization {
   max-width: 600px;
   margin: 0 auto 10em;
@@ -71,7 +72,7 @@ export default {
 
     &_title {
       margin: 0 0 0.4em;
-      color: #141414;
+      color: $themeBlack;
       font-size: 73px;
       font-weight: 700;
       line-height: 96px;
@@ -79,7 +80,7 @@ export default {
     }
     &_info {
       margin: 0;
-      color: #141414;
+      color: $themeBlack;
       font-size: 18px;
       font-weight: 100;
       line-height: 32px;
@@ -90,7 +91,7 @@ export default {
     justify-content: space-between;
     &_item {
       margin: 0;
-      color: #141414;
+      color: $themeBlack;
       font-size: 18px;
       font-weight: 100;
       line-height: 32px;

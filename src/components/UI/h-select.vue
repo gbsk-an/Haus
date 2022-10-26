@@ -1,14 +1,15 @@
 <template>
-  <div class="v-select">
-    <p class="v-select_title">Sort by:</p>
-    <p @click="areOptionsVisible = !areOptionsVisible">
+  <div class="h-select">
+    <p class="h-select_title">Sort by:</p>
+    <p @click="areOptionsVisible = !areOptionsVisible" class="h-select_selected">
       {{ selected }}
     </p>
-    <div class="options" v-if="areOptionsVisible">
+    <div class="h-select_options" v-if="areOptionsVisible">
       <p
         v-for="option in options"
         :key="option.value"
         @click="selectOption(option)"
+        class="h-select_options-item"
       >
         {{ option.name }}
       </p>
@@ -55,23 +56,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.v-select {
+@import "@/styles/scss/variables";
+.h-select {
   position: relative;
   padding: 1em 0 0 0.6em;
   cursor: pointer;
-  border: 1px solid #0f0f0f93;
+  border: 1px solid $blackClear;
   width: 200px;
   &_title {
     margin: 0 0 1em;
+    color: $themeBlack;
   }
-}
-.options {
-  position: absolute;
-  left: 0;
-  padding: 0.7em;
-  width: 100%;
-  border: 1px solid #141414;
-  background-color: #ffffff;
-  z-index: 10;
+  &_selected {
+    color: $themeBlack;
+  }
+  &_options {
+    position: absolute;
+    left: 0;
+    padding: 0.7em;
+    width: 100%;
+    border: 1px solid $themeBlack;
+    background-color: $defaultWhite;
+    z-index: 10;
+    &-item {
+      color: $themeBlack;
+    }
+  }
 }
 </style>

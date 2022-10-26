@@ -5,7 +5,7 @@
     </div>
     <div class="intro-item intro-text">
       <div>
-        <h2 class="intro-text_title">An intro to apéritifs</h2>
+        <h2>An intro to apéritifs</h2>
       </div>
       <div class="intro-text_description">
         <p>
@@ -25,6 +25,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .intro {
   margin: 0 auto;
   padding: 2em 0;
@@ -39,21 +40,12 @@ export default {
     align-items: center;
     gap: 8em;
 
-    &_title {
-      margin: 0;
-      color: #141414;
-      font-weight: 400;
-      font-size: 53px;
-      line-height: 80px;
-    }
-
     &_description {
       text-align: justify;
-      font-size: 18px;
-      line-height: 32px;
+      
       & > p {
         margin: 0;
-        color: #141414;
+        color: $themeBlack;
       }
     }
   }

@@ -140,6 +140,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .cart {
   padding: 2em 0;
 
@@ -154,7 +155,7 @@ export default {
     &_link {
       position: relative;
       padding-left: 1.6em;
-      color: #141414;
+      color: $themeBlack;
       font-size: 18px;
       text-decoration: none;
       &:before {
@@ -188,7 +189,7 @@ export default {
   margin-bottom: 1em;
   &_title {
     margin: 0 0 0.6em;
-    color: #141414;
+    color: $themeBlack;
     font-weight: 400;
     font-size: 30px;
     line-height: 44px;
@@ -198,7 +199,7 @@ export default {
   margin-bottom: 1em;
   &_title {
     margin: 0 0 0.6em;
-    color: #141414;
+    color: $themeBlack;
     font-weight: 400;
     font-size: 30px;
     line-height: 44px;
@@ -212,13 +213,13 @@ export default {
 .shipping-method-block {
   &_title {
     margin: 0 0 0.6em;
-    color: #141414;
+    color: $themeBlack;
     font-weight: 400;
     font-size: 30px;
     line-height: 44px;
   }
   &_text {
-    color: #141414;
+    color: $themeBlack;
     font-size: 18px;
     font-weight: 600;
     line-height: 32px;
@@ -227,7 +228,7 @@ export default {
 .checkout-order-summary {
   &_title {
     margin: 0 0 0.6em;
-    color: #141414;
+    color: $themeBlack;
     font-weight: 400;
     font-size: 24px;
     line-height: 44px;
@@ -242,7 +243,7 @@ export default {
     &-grand {
       display: flex;
       justify-content: space-between;
-      color: #141414;
+      color: $themeBlack;
     }
   }
 }
@@ -263,12 +264,12 @@ export default {
   }
   &_text {
     margin: 0;
-    color: #747474;
+    color: $themeGreyAlt;
     font-size: 18px;
     font-weight: 600;
     line-height: 32px;
     &-link {
-      color: #141414;
+      color: $themeBlack;
     }
   }
 }

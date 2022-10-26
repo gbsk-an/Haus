@@ -9,7 +9,9 @@ export default {
   name: "Loading",
 };
 </script>
-<style>
+
+<style lang="scss" scoped>
+@import "@/styles/scss/variables";
 #loading {
   position: fixed;
   top: 0;
@@ -17,7 +19,7 @@ export default {
   z-index: 1000;
   height: 100%;
   width: 100%;
-  background-color: #161519;
+  background-color: $loadingColor;
 }
 .img {
   position: absolute;

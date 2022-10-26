@@ -50,8 +50,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .footer {
-  background-color: #191919;
+  background-color: $themeBlackAlt;
   width: 100%;
 
   &-container {
@@ -67,23 +68,15 @@ export default {
 
     &_title {
       margin: 0 0 1em;
-      color: #f7f7f7;
-      font-weight: 400;
-      font-size: 42px;
-      line-height: 72px;
     }
 
     & > p {
       margin: 0 0 0.8em;
-      color: #f7f7f7;
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 27px;
     }
 
     &_form {
       display: flex;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid $whiteClear;
       width: fit-content;
     }
   }
@@ -96,7 +89,7 @@ export default {
 
     &_title {
       margin: 0 0;
-      color: #f7f7f7;
+      color: $themeWhite;
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
@@ -104,7 +97,7 @@ export default {
     }
 
     & > a {
-      color: rgba(255, 255, 255, 0.6);
+      color: $whiteClear;
       text-decoration: none;
       font-weight: 400;
       font-size: 12px;
@@ -122,7 +115,7 @@ export default {
 
     &_title {
       margin: 0 0;
-      color: #f7f7f7;
+      color: $themeWhite;
       font-weight: 400;
       font-size: 14px;
       line-height: 21px;
@@ -130,7 +123,7 @@ export default {
     }
 
     & > a {
-      color: rgba(255, 255, 255, 0.6);
+      color: $whiteClear;
       text-decoration: none;
       font-weight: 400;
       font-size: 12px;
@@ -149,13 +142,13 @@ export default {
     gap: 3em;
 
     &_item {
-      color: rgba(255, 255, 255, 0.6);
+      color: $whiteClear;
       font-weight: 400;
       font-size: 16px;
       line-height: 24px;
 
       &:first-child {
-        color: #f7f7f7;
+        color: $themeWhite;
         font-weight: 400;
         font-size: 15px;
         line-height: 24px;
@@ -166,7 +159,7 @@ export default {
 .input-mail {
   padding: 1em;
   background-color: transparent;
-  color: #818181;
+  color: $themeGrey;
   appearance: none;
   border: none;
   border-radius: 0;
@@ -181,7 +174,7 @@ export default {
 .button-submit {
   background-color: transparent;
   border: none;
-  color: #f7f7f7;
+  color: $themeWhite;
   font-weight: 400;
   font-size: 12px;
   line-height: 14px;

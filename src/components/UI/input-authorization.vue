@@ -9,17 +9,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .input-authorization {
   position: relative;
   display: block;
   width: 100%;
   padding: 1.6em 1em;
-  color: #747474;
-  background-color: #ffffff;
-  border: 1px solid #141414;
+  color: $themeGreyAlt;
+  background-color: $defaultWhite;
+  border: 1px solid $themeBlack;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Playfair Display", serif;
+  font-family: $themeFont;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;

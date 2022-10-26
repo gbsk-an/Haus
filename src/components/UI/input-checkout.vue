@@ -9,17 +9,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/scss/variables";
 .input-checkout {
   position: relative;
   display: block;
   width: 384px;
   padding: 0.6em 1em;
-  color: #747474;
-  background-color: #ffffff;
-  border: 1px solid #b1b1b1;
+  color: $themeGreyAlt;
+  background-color: $defaultWhite;
+  border: 1px solid $lightGrey;
   border-radius: 0;
   background-clip: padding-box;
-  font-family: "Playfair Display", serif;
+  font-family: $themeFont;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
@@ -27,8 +28,8 @@ export default {
   text-transform: uppercase;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   &:focus {
-    border-color: #141414;
-    color: #141414;
+    border-color: $themeBlack;
+    color: $themeBlack;
     outline: none;
     box-shadow: none;
   }

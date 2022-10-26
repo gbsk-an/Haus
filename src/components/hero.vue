@@ -5,6 +5,7 @@
         src="../assets/background.png"
         class="hero-background_image"
         alt="background"
+        loading="lazy"
       />
     </div>
     <div class="hero-text">
@@ -27,31 +28,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../styles/scss/variables";
 .hero {
   display: flex;
   gap: 9em;
-  background-color: #996b60;
+  background-color: $primary;  
   &-background {
     &_image {
       height: 100%;
     }
   }
-
   &-text {
     margin: 15em 0 6em;
     &_title {
       margin: 0 0 1.2em;
-      color: #f7f7f7;
-      font-size: 73px;
-      font-weight: 700;
-      line-height: 96px;
     }
     &_description {
       margin: 0 0 1em;
-      color: #f7f7f7;
-      font-size: 18px;
-      font-weight: 100;
-      line-height: 32px;
     }
   }
 }
