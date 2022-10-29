@@ -97,6 +97,7 @@ export default {
       maxPrice: 300,
       sortedProducts: [],
       searchValue: "",
+      mobileWidth: false
     };
   },
   computed: {
@@ -179,6 +180,9 @@ export default {
       this.selected = "...";
       this.GET_SEARCH_VALUE_VUEX();
     },
+    onResize() {
+        this.mobileWidth = window.innerWidth <= 576;
+    }
   },
   mounted() {
     this.GET_PRODUCTS_FROM_API().then((response) => {
@@ -193,6 +197,13 @@ export default {
       this.sortProductsBySearch(this.SEARCH_VALUE);
     },
   },
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize)
+  },
 };
 </script>
 
@@ -202,16 +213,25 @@ export default {
   margin: 0 auto;
   padding: 2em 0;
   max-width: 1710px;
+  @media (max-width: (576px)) {
+    padding: 0;
+  }
 }
 .container {
   display: flex;
   gap: 1em;
+  @media (max-width: (576px)) {
+    flex-direction: column;
+  }
 
   &-catalog {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 2em;
+    @media (max-width: (576px)) {
+      justify-content: center;
+  }
   }
 
   &-sort {
@@ -219,6 +239,10 @@ export default {
     display: flex;
     flex-direction: column;
     gap: 1em;
+    @media (max-width: (576px)) {
+      width: 100%;
+      padding: 0 1em;
+    }
   }
 }
 
@@ -228,6 +252,9 @@ export default {
   align-items: center;
   margin-bottom: 2em;
   gap: 0 2em;
+  @media (max-width: (576px)) {
+    margin: 0;
+  }
 }
 
 .search-filed {
@@ -236,6 +263,7 @@ export default {
 
   &_input {
     padding: 1em;
+    width: 100%;
     background-color: transparent;
     color: $themeGrey;
     appearance: none;

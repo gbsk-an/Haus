@@ -1,5 +1,20 @@
 <template>
-  <div class="feedbacks">
+  <div class="mb-feedbacks" v-if="mobileWidth">
+    <Carousel :items-to-show="1">
+      <Slide v-for="slide in 3" :key="slide">
+        <div class="mb-feedbacks-item">
+          <p class="mb-feedbacks-item_title">
+            "What makes Haus so special is its incredible flavors."
+          </p>
+          <img src="@/assets/food-and-wine.svg" alt="food and wine logo" />
+        </div>
+      </slide>
+      <template #addons>
+        <Navigation />
+      </template>
+    </Carousel>
+  </div>
+  <div class="feedbacks" v-else>
     <div class="feedbacks-item">
       <p class="feedbacks-item_title">
         "What makes Haus so special is its incredible flavors."
@@ -23,8 +38,30 @@
 </template>
 
 <script>
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide, Navigation } from 'vue3-carousel'
 export default {
   name: "Feedbacks",
+  components: {
+    Carousel,
+    Slide,    
+    Navigation
+  },
+  data: () => ({
+    mobileWidth: false,
+  }),
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize() {
+        this.mobileWidth = window.innerWidth <= 576;
+    }
+  }
 };
 </script>
 
@@ -39,6 +76,20 @@ export default {
   justify-content: space-between;
   gap: 12em;
 
+  &-item {
+    text-align: center;
+
+    &_title {
+      margin-bottom: 1.6em;
+      color: $themeBlack;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 32px;
+    }
+  }
+}
+.mb-feedbacks {
+  padding: 2em;
   &-item {
     text-align: center;
 

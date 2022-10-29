@@ -10,11 +10,11 @@
         <btn-white>Spotify</btn-white>
       </div>
       <div class="follow-content_social">
-        <p>Follow us, share us, drink Ha(us)</p>
-        <div class="flex">
-          <a href="#" class="follow-content_social-link">Instagram</a>
-          <a href="#" class="follow-content_social-link">Facebook</a>
-          <a href="#" class="follow-content_social-link">Twitter</a>
+        <p>Follow us, share us, drink Haus</p>
+        <div class="follow-content_social-links">
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">Twitter</a>
         </div>
       </div>
     </div>
@@ -35,6 +35,9 @@ export default {
   background-image: url("@/assets/background_4.png");
   background-repeat: no-repeat;
   background-size: cover;
+  @media (max-width: (576px)) {
+    padding: 5em 1em;
+  }
 
   &-content {
     margin: 0 auto;
@@ -49,6 +52,12 @@ export default {
       width: fit-content;
       text-align: center;
       background-color: $themeBlackAlt;
+      @media (max-width: (576px)) {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        box-shadow: $shadowDefault;
+      }
 
       & > h2 {
         margin: 0;
@@ -80,14 +89,19 @@ export default {
         line-height: 28px;
       }
 
-      &-link {
-        color: $whiteClear;
-        text-decoration: none;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 18px;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+      &-links {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        &> a {
+          color: $whiteClear;
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 12px;
+          line-height: 18px;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
       }
     }
   }

@@ -33,5 +33,8 @@ export default {
     outline: none;
     box-shadow: none;
   }
+  @media (max-width: (576px)) {
+    width: 100%;
+  }
 }
 </style>

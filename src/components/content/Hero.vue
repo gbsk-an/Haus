@@ -91,7 +91,9 @@ export default {
     margin-bottom: 1.4em;
     background-color: $primaryClearAlt;
     box-shadow: $shadowDefault;
+    opacity: .8;
     text-align: center;
+
   }
   &_description {
     text-align: justify;

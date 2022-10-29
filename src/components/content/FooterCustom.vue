@@ -60,6 +60,7 @@ export default {
     padding: 5em 0;
     max-width: 1320px;
     display: flex;
+    flex-wrap: wrap;
     gap: 3em;
   }
 
@@ -140,6 +141,9 @@ export default {
     flex-direction: row;
     justify-content: flex-start;
     gap: 3em;
+    @media (max-width: (576px)) {
+      gap: .8em;
+    }
 
     &_item {
       color: $whiteClear;

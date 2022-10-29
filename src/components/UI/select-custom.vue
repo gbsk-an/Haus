@@ -63,6 +63,9 @@ export default {
   cursor: pointer;
   border: 1px solid $blackClear;
   width: 200px;
+  @media (max-width: (576px)) {
+    width: 100%;
+  }
   &_title {
     margin: 0 0 1em;
     color: $themeBlack;

@@ -1,5 +1,5 @@
 <template>
-  <div class="intro">
+  <div class="intro" v-if="desktopWidth">
     <div class="intro-item">
       <img src="@/assets/background_2.png" />
     </div>
@@ -21,6 +21,21 @@
 <script>
 export default {
   name: "IntroToAperol",
+  data: () => ({
+    desktopWidth: false,
+  }),
+  created() {
+    window.addEventListener('resize', this.onResize);
+    this.onResize();
+  },
+  destroyed() {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize() {
+        this.desktopWidth = window.innerWidth >= 576;
+    }
+  }
 };
 </script>
 

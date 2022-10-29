@@ -176,6 +176,11 @@ export default {
     &_shipping {
       max-width: 800px;
     }
+    &_products {
+      @media (max-width: (576px)) {
+        order: -1;
+      }
+    }
   }
 }
 .wrapper {
@@ -184,6 +189,11 @@ export default {
   display: flex;
   justify-content: space-between;
   gap: 2em;
+  @media (max-width: (576px)) {
+    padding: 0 1em;
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 .login-section {
   margin-bottom: 1em;
@@ -261,6 +271,7 @@ export default {
     font-weight: 400;
     font-size: 30px;
     line-height: 44px;
+    color: $themeBlack;
   }
   &_text {
     margin: 0;

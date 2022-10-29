@@ -1,5 +1,5 @@
 <template>
-  <authorization-layout>
+  <HeaderFooterLayout>
     <div class="authorization">
       <div class="authorization-section">
         <h1 class="authorization-section_title">Welcome</h1>
@@ -33,7 +33,7 @@
         </div>
       </div>
     </div>
-  </authorization-layout>
+  </HeaderFooterLayout>
 </template>
 
 <script>
