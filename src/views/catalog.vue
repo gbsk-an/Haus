@@ -71,6 +71,7 @@
           />
         </div>
       </div>
+      <cart-button />
     </div>
   </HeaderFooterLayout>
 </template>

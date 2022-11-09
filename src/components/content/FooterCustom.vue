@@ -62,6 +62,9 @@ export default {
     display: flex;
     flex-wrap: wrap;
     gap: 3em;
+    @media (max-width: (576px)) {
+      padding: 3em 0;
+    }
   }
 
   &-newsletter {

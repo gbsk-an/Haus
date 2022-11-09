@@ -151,7 +151,9 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
+    @media (max-width: (576px)) {
+      padding: 0 1em 2em;
+    }
     &_link {
       position: relative;
       padding-left: 1.6em;
